@@ -1,22 +1,8 @@
 import type { NextPage } from 'next';
-import Welcome from '../components/Welcome';
-// import About from '../components/About';
-// import Experience from '../components/Experience';
-import Work from '../components/Work';
-// import Contact from '../components/Contact';s
-
-// import styles from '../styles/Home.module.css';
+import Layout from '../components/Layout';
 
 const Home: NextPage = () => {
-  return (
-    <div>
-      <Welcome />
-      {/* <About /> */}
-      {/* <Experience /> */}
-      <Work />
-      {/* <Contact /> */}
-    </div>
-  );
+  return <Layout />;
 };
 
 export default Home;
