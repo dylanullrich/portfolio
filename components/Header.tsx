@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-function classNames(...classes: boolean[]) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
