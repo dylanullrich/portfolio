@@ -8,7 +8,7 @@ import Border from './Border';
 
 export default function Layout() {
   return (
-    <div className='bg-slate-900'>
+    <main className='bg-slate-900'>
       <Intro />
       <Border sectionName='About' />
       <About />
@@ -18,7 +18,6 @@ export default function Layout() {
       <Experience />
       <Border sectionName='Contact' />
       <Contact />
-      <Footer />
-    </div>
+    </main>
   );
 }

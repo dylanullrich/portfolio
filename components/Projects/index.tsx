@@ -13,7 +13,8 @@ const projects: Project[] = [
     name: 'Assignment Buster',
     description:
       'Assignment Buster is a Slack App that helps students stay up-to-date with their coursework. Students are able to quickly access their Canvas assignments utilzing slash commands in slack.',
-    imageUrl: 'https://tailwindui.com/img/features/feature-example-1.png',
+    imageUrl:
+      'https://avatars.githubusercontent.com/u/108555923?s=400&u=ff58dd4f31d0efe8ec0c524aeedc3b57ecd87f36&v=4',
     url: 'https://github.com/GetUllrichorDieTrying/assignment-buster',
   },
   {
