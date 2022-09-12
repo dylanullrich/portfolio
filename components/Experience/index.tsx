@@ -16,16 +16,16 @@ const experience: Job[] = [
     imgUrl: '/images/cflogo.png',
   },
   {
-    companyName: 'University of Washington',
-    jobTitle: 'BA - Law, Economics, and Public Policy',
-    timeActive: '2022',
-    imgUrl: '/images/uwlogo.svg',
-  },
-  {
     companyName: 'BaseHubs',
     jobTitle: 'Business Development',
     timeActive: '2021-2022',
     imgUrl: '/images/BaseHubslogo.png',
+  },
+  {
+    companyName: 'University of Washington',
+    jobTitle: 'BA - Law, Economics, and Public Policy',
+    timeActive: '2021-2022',
+    imgUrl: '/images/uwlogo.svg',
   },
   {
     companyName: 'US Army',
