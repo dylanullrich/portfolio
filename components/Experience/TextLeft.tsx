@@ -25,7 +25,7 @@ export default function TextLeft({
       </div>
       <span className='px-1'></span>
 
-      <div className='relative mx-auto place-self-center pr-80 text-center text-gray-300 sm:pr-96 md:pr-96 lg:pr-96'>
+      <div className='relative mx-auto place-self-center  pr-64 text-center text-gray-300 sm:pr-96 md:pr-96 lg:pr-96'>
         <p className='text-sm'>{companyName}</p>
         <p className='text-md font-bold'>{jobTitle}</p>
         <p className='text-xs font-light'>{timeActive}</p>
