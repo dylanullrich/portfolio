@@ -24,7 +24,7 @@ export default function TextRight({
       </div>
       <span className='px-1'></span>
 
-      <div className='relative mx-auto place-self-center pl-96 text-center text-gray-300'>
+      <div className='relative mx-auto place-self-center pl-80 text-center text-gray-300 sm:pl-96 md:pl-96 lg:pl-96'>
         <p className='text-sm'>{companyName}</p>
         <p className='text-md font-bold'>{jobTitle}</p>
         <p className='text-xs font-light'>{timeActive}</p>
