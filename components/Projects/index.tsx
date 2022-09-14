@@ -40,7 +40,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <div className='px-72'>
+    <div className='px-6 sm:px-72'>
       <DescriptionLeft
         projectName={projects[0].name}
         description={projects[0].description}
