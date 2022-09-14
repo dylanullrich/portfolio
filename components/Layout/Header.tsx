@@ -14,7 +14,7 @@ export default function Header() {
           <div className='flex items-center'>
             <a href='#'>
               <span className='sr-only'>Get Ullrich or Die Trying</span>
-              <h1 className='text-teal-400'>GUDT</h1>
+              <h1 className='text-teal-500'>GUDT</h1>
               {/* <Image src='' alt='Get Ullrich or Die Trying Logo' /> */}
             </a>
           </div>
@@ -24,7 +24,7 @@ export default function Header() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className='text-base font-medium text-white hover:text-indigo-50'
+                  className='text-base font-medium text-gray-400'
                 >
                   {link.name}
                 </a>
@@ -54,7 +54,7 @@ export default function Header() {
           ))}
           <a
             href='#contact'
-            className='rounded-md border-2 border-teal-400 bg-slate-800 px-2 py-1 text-base font-medium text-teal-400 shadow-sm hover:bg-teal-400 hover:text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+            className='rounded-md border-2 border-teal-400 bg-slate-800 px-2 py-1 text-base font-medium text-teal-400 shadow-sm hover:bg-teal-400 hover:text-slate-800 focus:outline-none focus:ring-offset-2'
           >
             Contact
           </a>

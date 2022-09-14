@@ -24,11 +24,23 @@ const projects: Project[] = [
     imageUrl: 'https://avatars.githubusercontent.com/u/106547519?s=200&v=4',
     url: 'https://github.com/GetUllrichorDieTrying/captain-caption',
   },
+  {
+    name: 'Resty',
+    description: `Resty is a browser based API testing tool. Give the deployment link a click, and enter in your favorite API's. `,
+    imageUrl: 'https://avatars.githubusercontent.com/u/106547519?s=200&v=4',
+    url: 'https://github.com/GetUllrichorDieTrying/resty',
+  },
+  {
+    name: 'Serverless API',
+    description: 'AWS Lambda Serverless API.',
+    imageUrl: 'https://avatars.githubusercontent.com/u/106547519?s=200&v=4',
+    url: 'AWS Lambda Serverless API.',
+  },
 ];
 
 export default function Projects() {
   return (
-    <div className='px-32'>
+    <div className='px-72'>
       <DescriptionLeft
         projectName={projects[0].name}
         description={projects[0].description}
@@ -40,6 +52,18 @@ export default function Projects() {
         description={projects[1].description}
         imageUrl={projects[1].imageUrl}
         url={projects[1].url}
+      />
+      <DescriptionLeft
+        projectName={projects[2].name}
+        description={projects[2].description}
+        imageUrl={projects[2].imageUrl}
+        url={projects[2].url}
+      />
+      <DescriptionRight
+        projectName={projects[3].name}
+        description={projects[3].description}
+        imageUrl={projects[3].imageUrl}
+        url={projects[3].url}
       />
     </div>
   );

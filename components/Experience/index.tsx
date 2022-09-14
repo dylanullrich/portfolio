@@ -36,7 +36,7 @@ const experience: Job[] = [
 ];
 export default function Work() {
   return (
-    <div>
+    <div className='py-24'>
       <TextLeft
         companyName={experience[0].companyName}
         jobTitle={experience[0].jobTitle}

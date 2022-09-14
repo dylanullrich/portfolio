@@ -4,7 +4,7 @@ interface SectionName {
 
 export default function Border({ sectionName }: SectionName) {
   return (
-    <div className='relative'>
+    <div className='relative py-6'>
       <div
         className='absolute inset-0 flex items-center px-8'
         aria-hidden='true'

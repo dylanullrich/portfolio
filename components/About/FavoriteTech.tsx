@@ -6,7 +6,7 @@ export default function FavoriteTech() {
       <div className='divide-y divide-gray-200 overflow-hidden rounded-lg bg-slate-800 shadow'>
         <div className='border-b border-gray-200 bg-slate-800 px-4 py-5 sm:px-6'>
           <h3 className='text-center text-lg font-medium leading-6 text-white'>
-            Tech I Love to Use
+            Some of my favorite tech:
           </h3>
         </div>
         <div className='justify-center px-4 py-5 text-center sm:p-6'>
