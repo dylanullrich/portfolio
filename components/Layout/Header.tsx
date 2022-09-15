@@ -31,7 +31,7 @@ export default function Header() {
               ))}
               <a
                 href='#contact'
-                className='rounded-md border-2 border-teal-400 bg-slate-800 px-2 py-1 text-base font-medium text-teal-400 shadow-md
+                className='rounded-md border-2 border-teal-400 bg-slate-800 px-2 py-1 text-base font-medium text-teal-400 shadow-sm
                 shadow-teal-400
                 transition ease-in-out
                 hover:bg-teal-400
