@@ -24,7 +24,7 @@ export default function Header() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className='text-base font-medium text-gray-400'
+                  className='text-base font-medium text-gray-400 hover:text-gray-100'
                 >
                   {link.name}
                 </a>

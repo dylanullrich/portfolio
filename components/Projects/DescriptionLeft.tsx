@@ -15,14 +15,14 @@ export default function DescriptionLeft({
   url,
 }: Project) {
   return (
-    <>
-      <div className='relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center'>
-        <div className='relative'>
+    <div className='relative mt-12 sm:mt-16 lg:mt-24'>
+      <div className='lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:items-center lg:gap-4'>
+        <div className='h-full rounded-lg bg-slate-700 p-6 lg:col-span-2'>
           <h3 className='text-2xl font-bold tracking-tight text-white sm:text-3xl'>
             {projectName}
           </h3>
           <p className='mt-3 max-w-xl text-lg text-gray-400'>{description}</p>
-          <div className='py-6'>
+          <div className='py-3'>
             <a className='cursor-pointer'>
               <Link href={url}>
                 <Image
@@ -36,16 +36,16 @@ export default function DescriptionLeft({
           </div>
         </div>
 
-        <div className='relative mx-auto mt-10 lg:mt-0' aria-hidden='true'>
+        <div className='relative mx-auto mt-10 w-full  text-center lg:mt-0'>
           <Image
-            className='relative w-auto rounded-md'
+            className='relative rounded-md'
             width={250}
             height={300}
             src={imageUrl}
-            alt={`${projectName} app photo`}
+            alt={`${projectName} snapshot`}
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }
