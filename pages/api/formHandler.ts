@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
 import { config } from '../../config';
@@ -27,11 +26,31 @@ export default async function formHandler(
       from: 'dylan@getullrichordietrying.com', // Change to your verified sender
       subject: `CONTACT REQUEST FROM ${req.body.name}!`,
       text: req.body.message,
-      html: `<h2>${req.body.name}</h2><br><p>${req.body.message}</p><br><p>Their email is: <strong>${req.body.email}</strong></p>`,
+      html: `
+      <head>
+        <style>
+        * {
+          background-color: rgb(15 23 42);;
+          color: rgb(156 163 175);
+          }
+        div {
+          padding: 12px;
+        }
+        
+        </style>
+      </head>
+      
+      <div>
+        <h2>${req.body.name}</h2>
+        <br>
+        <p>${req.body.message}</p>
+        <br>
+        <p>Their email is: <strong>${req.body.email}</strong></p>
+      </div>
+      `,
     };
     await sgMail.send(msg);
   } catch (error) {
     console.error(error);
   }
-  res.status(200).json({ name: 'John Doe' });
 }
