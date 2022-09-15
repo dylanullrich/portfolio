@@ -44,16 +44,6 @@ export default function DescriptionRight({
             </a>
           </div>
         </div>
-        z
-        {/* <div className='relative mx-auto mt-10 w-full  text-center lg:mt-0'>
-          <Image
-            className='relative rounded-md'
-            width={250}
-            height={300}
-            src={imageUrl}
-            alt={`${projectName} snapshot`}
-          />
-        </div> */}
       </div>
     </div>
   );
