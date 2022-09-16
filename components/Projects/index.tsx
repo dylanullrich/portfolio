@@ -19,7 +19,7 @@ const projects: Project[] = [
   {
     name: 'Captain Caption',
     description:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit.Impedit ex obcaecati natus eligendi delectus, cum deleniti sunt in labore nihil quod quibusdam expedita nemo.',
+      'Allows users to transcribe and translate spoken language utilizing the speech to text API. Users can log in and save their transriptions to MongoDB, which is guarded with Auth0.',
     imageUrl: '/images/captain-caption.png',
     url: 'https://github.com/GetUllrichorDieTrying/captain-caption',
   },
@@ -31,9 +31,10 @@ const projects: Project[] = [
   },
   {
     name: 'Serverless API',
-    description: 'AWS Lambda Serverless API.',
+    description:
+      'AWS Lambda Serverless API. This example shows how I often use serverless functions rather than a more traditional server.',
     imageUrl: '/images/serverless-api.png',
-    url: 'AWS Lambda Serverless API.',
+    url: 'https://github.com/GetUllrichorDieTrying/serverless-api',
   },
 ];
 
