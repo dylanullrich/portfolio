@@ -14,28 +14,28 @@ export default function Intro() {
       </p>
       <div className='flex gap-4'>
         <div className='py-3 delay-75 hover:scale-110'>
-          <a className='cursor-pointer'>
-            <Link href='https://github.com/GetUllrichorDieTrying'>
+          <Link href='https://github.com/GetUllrichorDieTrying' passHref>
+            <a className='cursor-pointer'>
               <Image
                 src='/images/GitHub-Mark-Light-120px-plus.png'
                 alt='link to github'
                 width={32}
                 height={32}
               />
-            </Link>
-          </a>
+            </a>
+          </Link>
         </div>
         <div className='py-3 delay-75 hover:scale-110'>
-          <a className='cursor-pointer'>
-            <Link href='https://www.linkedin.com/in/dsullrich/'>
+          <Link href='https://www.linkedin.com/in/dsullrich/' passHref>
+            <a className='cursor-pointer'>
               <Image
                 src='/images/linkedin.svg'
                 alt='link to linkedin'
                 width={32}
                 height={32}
               />
-            </Link>
-          </a>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

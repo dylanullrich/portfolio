@@ -32,16 +32,16 @@ export default function DescriptionRight({
           </h3>
           <p className='mt-3 max-w-xl text-lg text-gray-400'>{description}</p>
           <div className='py-3'>
-            <a className='cursor-pointer'>
-              <Link href={url}>
+            <Link href={url} passHref>
+              <a className='cursor-pointer'>
                 <Image
                   src='/images/GitHub-Mark-Light-120px-plus.png'
                   alt='Github logo that links to project'
                   width={32}
                   height={32}
                 />
-              </Link>
-            </a>
+              </a>
+            </Link>
           </div>
         </div>
       </div>
