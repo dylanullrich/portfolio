@@ -13,7 +13,7 @@ export default function Intro() {
         I am a Full Stack Developer.
       </p>
       <div className='flex gap-4'>
-        <div className='py-3 delay-75 hover:scale-110'>
+        <div className='py-3 delay-150 hover:scale-110'>
           <Link href='https://github.com/GetUllrichorDieTrying' passHref>
             <a className='cursor-pointer'>
               <Image
@@ -25,7 +25,7 @@ export default function Intro() {
             </a>
           </Link>
         </div>
-        <div className='py-3 delay-75 hover:scale-110'>
+        <div className='py-3 delay-150 hover:scale-110'>
           <Link href='https://www.linkedin.com/in/dsullrich/' passHref>
             <a className='cursor-pointer'>
               <Image

@@ -14,8 +14,8 @@ export default function TextLeft({
   imgUrl,
 }: Job) {
   return (
-    <div className='relative flex h-16 w-full'>
-      <div className='absolute left-1/2 mx-auto h-16 w-16 flex-auto -translate-x-1/2 items-center justify-center'>
+    <div className='relative mx-auto flex h-16 w-full'>
+      <div className='absolute left-1/2  h-16 w-16 flex-auto -translate-x-1/2 items-center justify-center'>
         <Image
           src={imgUrl}
           alt={`${companyName} logo`}

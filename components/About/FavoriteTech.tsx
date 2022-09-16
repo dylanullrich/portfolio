@@ -73,7 +73,7 @@ const techList: TechImage[] = [
 const favoriteList = techList.map((item) => {
   return (
     <div
-      className='rounded-lg bg-gray-100 shadow delay-75 hover:scale-110'
+      className='rounded-lg bg-gray-100 shadow delay-150 hover:scale-110'
       key={item.techName}
     >
       <Link href={item.docsUrl} passHref>
