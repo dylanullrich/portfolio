@@ -76,7 +76,7 @@ const favoriteList = techList.map((item) => {
       className='rounded-lg bg-gray-100 shadow delay-75 hover:scale-110'
       key={item.techName}
     >
-      <Link href={item.docsUrl}>
+      <Link href={item.docsUrl} passHref>
         <a className='cursor-pointer'>
           <div className='p-2 text-center'>
             <Image
