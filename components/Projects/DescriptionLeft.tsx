@@ -15,14 +15,14 @@ export default function DescriptionLeft({
   url,
 }: Project) {
   return (
-    <div className='relative mt-12 sm:mt-16 lg:mt-24'>
-      <div className='lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:items-center lg:gap-4'>
-        <div className='h-full rounded-lg bg-slate-700 p-6 lg:col-span-2'>
+    <div className='relative mt-24'>
+      <div className='flex flex-col gap-4 lg:grid lg:grid-flow-row-dense lg:grid-cols-5 lg:items-center'>
+        <div className='h-full rounded-lg bg-slate-700 p-6 lg:col-span-3'>
           <h3 className='text-2xl font-bold tracking-tight text-white sm:text-3xl'>
             {projectName}
           </h3>
           <p className='mt-3 max-w-xl text-lg text-gray-400'>{description}</p>
-          <div className='py-3'>
+          <div className='max-w-fit py-3 delay-150 hover:scale-110'>
             <Link href={url} passHref>
               <a className='cursor-pointer'>
                 <Image
@@ -36,11 +36,10 @@ export default function DescriptionLeft({
           </div>
         </div>
 
-        <div className='relative mx-auto mt-10 w-full  text-center lg:mt-0'>
+        <div className='relative h-60 lg:col-span-2'>
           <Image
-            className='relative rounded-md'
-            width={250}
-            height={300}
+            className='rounded-md'
+            layout='fill'
             src={imageUrl}
             alt={`${projectName} snapshot`}
           />

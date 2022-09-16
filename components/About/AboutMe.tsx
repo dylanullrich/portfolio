@@ -1,13 +1,13 @@
 export default function AboutMe() {
   return (
     <div className='mx-auto max-w-7xl py-8 sm:w-1/2 sm:py-4 sm:px-6'>
-      <div className='divide-y divide-gray-400 overflow-hidden rounded-lg bg-slate-700 shadow'>
+      <div className='h-full divide-y divide-gray-400 overflow-hidden rounded-lg bg-slate-700 shadow'>
         <div className='border-b border-white  px-4 py-5 sm:px-6'>
-          <h3 className=' text-center text-lg font-medium leading-6 text-white'>
+          <h3 className='text-center text-lg font-medium leading-6 text-white'>
             A little about me...
           </h3>
         </div>
-        <div className='p-4 text-gray-400 sm:p-6'>
+        <div className='p-4 text-gray-400 sm:flex sm:items-center sm:p-6 md:h-3/4'>
           <p>
             I am a Veteran with an Active Secret Clearance, and recent
             experience working in Business Development at a tech startup. While

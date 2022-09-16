@@ -11,7 +11,7 @@ export default function Layout() {
       <Intro />
       <Border sectionName='About' />
       <About />
-      <Border sectionName={`Stuff I've Built`} />
+      <Border sectionName='Projects' />
       <Projects />
       <Border sectionName='Experience' />
       <Experience />

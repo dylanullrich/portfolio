@@ -47,14 +47,18 @@ export default function Header() {
             <a
               key={link.name}
               href={link.href}
-              className='text-base font-medium text-white hover:text-indigo-50'
+              className='text-base font-medium text-gray-400 hover:text-gray-100'
             >
               {link.name}
             </a>
           ))}
           <a
             href='#contact'
-            className='rounded-md border-2 border-teal-400 bg-slate-800 px-2 py-1 text-base font-medium text-teal-400 shadow-sm hover:bg-teal-400 hover:text-slate-800 focus:outline-none focus:ring-offset-2'
+            className='rounded-md border-2 border-teal-400 bg-slate-800 px-2 py-1 text-base font-medium text-teal-400 shadow-sm
+            shadow-teal-400
+            transition ease-in-out
+            hover:bg-teal-400
+          hover:text-slate-800 hover:shadow-slate-200'
           >
             Contact
           </a>
