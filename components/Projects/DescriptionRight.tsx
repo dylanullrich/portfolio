@@ -30,9 +30,9 @@ export default function DescriptionRight({
             {projectName}
           </h3>
           <p className='mt-3 max-w-xl text-lg text-gray-400'>{description}</p>
-          <div className='max-w-fit py-3 delay-150 hover:scale-110'>
+          <div className='max-w-fit py-3  hover:scale-110'>
             <Link href={url} passHref>
-              <a className='cursor-pointer delay-200 hover:scale-110'>
+              <a className='cursor-pointer  hover:scale-110'>
                 <Image
                   src='/images/GitHub-Mark-Light-120px-plus.png'
                   alt='Github logo that links to project'
