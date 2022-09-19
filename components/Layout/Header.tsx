@@ -24,12 +24,11 @@ export default function Header() {
               <Link href='/' passHref>
                 <a>
                   <Image
-                    src='/images/GUDT-logo.svg'
+                    src='/images/gudt-logo.svg'
                     width={100}
                     height={34}
                     alt='Get Ullrich or Die Trying Logo'
                   />
-                  <span className='sr-only'>Get Ullrich or Die Trying</span>
                 </a>
               </Link>
             </div>
