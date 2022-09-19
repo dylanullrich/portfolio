@@ -24,9 +24,9 @@ export default function Header() {
               <Link href='/' passHref>
                 <a>
                   <Image
-                    src='/images/gudt-logo.svg'
-                    width={100}
-                    height={34}
+                    src='/images/gudt-logo.png'
+                    width={50}
+                    height={32}
                     alt='Get Ullrich or Die Trying Logo'
                   />
                 </a>
