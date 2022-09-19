@@ -23,13 +23,12 @@ export default function Header() {
             <div className='flex items-center'>
               <Link href='/' passHref>
                 <a>
-                  <span className='sr-only'>Get Ullrich or Die Trying</span>
-                  {/* <h1 className='text-teal-500'>GUDT</h1> */}
                   <Image
-                    src='/images/GUDT-logo.svg'
+                    src='/images/gudt-logo.svg'
                     width={100}
                     height={34}
                     alt='Get Ullrich or Die Trying Logo'
+                    priority
                   />
                 </a>
               </Link>
