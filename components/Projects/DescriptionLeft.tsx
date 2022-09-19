@@ -22,7 +22,7 @@ export default function DescriptionLeft({
             {projectName}
           </h3>
           <p className='mt-3 max-w-xl text-lg text-gray-400'>{description}</p>
-          <div className='max-w-fit py-3 delay-150 hover:scale-110'>
+          <div className='max-w-fit py-3 hover:scale-110'>
             <Link href={url} passHref>
               <a className='cursor-pointer'>
                 <Image
