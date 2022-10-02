@@ -26,6 +26,18 @@ export default function Intro() {
           </Link>
         </div>
         <div className='py-3 hover:scale-110'>
+          <Link href='mailto:me@dylanullrich.com' passHref>
+            <a className='cursor-pointer'>
+              <Image
+                src='/images/protonmail.svg'
+                alt='link to linkedin'
+                width={32}
+                height={32}
+              />
+            </a>
+          </Link>
+        </div>
+        <div className='py-3 hover:scale-110'>
           <Link href='https://www.linkedin.com/in/dsullrich/' passHref>
             <a className='cursor-pointer'>
               <Image
