@@ -14,7 +14,7 @@ export default function Intro() {
       </p>
       <div className='flex gap-4'>
         <div className='py-3 hover:scale-110'>
-          <Link href='https://github.com/GetUllrichorDieTrying' passHref>
+          <Link href='https://github.com/dylanullrich/' passHref>
             <a className='cursor-pointer'>
               <Image
                 src='/images/GitHub-Mark-Light-120px-plus.png'
