@@ -14,27 +14,27 @@ const projects: Project[] = [
     description:
       'Assignment Buster is a Slack App that helps students stay up-to-date with their coursework. Students are able to quickly access their Canvas assignments utilzing slash commands in slack.',
     imageUrl: '/images/assignment-buster.png',
-    url: 'https://github.com/GetUllrichorDieTrying/assignment-buster',
+    url: 'https://github.com/dylanullrich/assignment-buster',
   },
   {
     name: 'Captain Caption',
     description:
       'Allows users to transcribe and translate spoken language utilizing the speech to text API. Users can log in and save their transriptions to MongoDB, which is guarded with Auth0.',
     imageUrl: '/images/captain-caption.png',
-    url: 'https://github.com/GetUllrichorDieTrying/captain-caption',
+    url: 'https://github.com/dylanullrich/captain-caption',
   },
   {
     name: 'Resty',
     description: `Resty is a browser based API testing tool. Give the deployment link a click, and enter in your favorite API's. `,
     imageUrl: '/images/resty.png',
-    url: 'https://github.com/GetUllrichorDieTrying/resty',
+    url: 'https://github.com/dylanullrich/resty',
   },
   {
     name: 'Serverless API',
     description:
       'AWS Lambda Serverless API. This example shows how I often use serverless functions rather than a more traditional server.',
     imageUrl: '/images/serverless-api.png',
-    url: 'https://github.com/GetUllrichorDieTrying/serverless-api',
+    url: 'https://github.com/dylanullrich/serverless-api',
   },
 ];
 
