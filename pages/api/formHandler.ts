@@ -10,9 +10,10 @@ type Data = {
 
 type Msg = {
   to: string;
+  cc?: string;
   from: string;
   subject: string;
-  text: string;
+  text?: string;
   html: string;
 };
 
@@ -22,10 +23,10 @@ export default async function formHandler(
 ) {
   try {
     const msg: Msg = {
-      to: 'dylan@getullrichordietrying.com', // Change to your recipient
-      from: 'dylan@getullrichordietrying.com', // Change to your verified sender
-      subject: `CONTACT REQUEST FROM ${req.body.name}!`,
-      text: req.body.message,
+      to: `${req.body.email}`, // Change to your recipient
+      cc: 'me@dylanullrich.com',
+      from: 'me@dylanullrich.com', // Change to your verified sender
+      subject: `Thanks for your message, ${req.body.name}!`,
       html: `
       <head>
         <style>
@@ -40,13 +41,18 @@ export default async function formHandler(
         </style>
       </head>
       
-      <div>
-        <h2>${req.body.name}</h2>
-        <br>
-        <p>${req.body.message}</p>
-        <br>
-        <p>Their email is: <strong>${req.body.email}</strong></p>
-      </div>
+  <div>
+  <h2>Hi ${req.body.name},</h2>
+  <h4>
+    Thank you for your email. I will be following up with you shortly from
+    <strong>me@dylanullrich.com</strong>.
+  </h4>
+  <p>You sent the following message:</p>
+  <p style="margin-left:30px;">${req.body.message}</p>
+  <p>
+    You will be contacted at: <strong>${req.body.email}</strong>.
+  </p>
+</div>
       `,
     };
     await sgMail.send(msg);

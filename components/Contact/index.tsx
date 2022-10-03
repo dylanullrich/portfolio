@@ -138,8 +138,7 @@ export default function Contact() {
             </h3>
             <br />
             <p className='text-center text-xl tracking-tight text-gray-300'>
-              You will be receiving an email shortly from
-              dylan@getullrichordietrying.com.
+              You will be receiving an email from me@dylanullrich.com.
             </p>
           </>
         )}
