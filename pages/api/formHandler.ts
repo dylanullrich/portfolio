@@ -11,7 +11,13 @@ type Data = {
 type Msg = {
   to: string;
   cc?: string;
-  from: string;
+  from:
+    | string
+    | {
+        name: string;
+        email: string;
+      };
+  replyTo: string;
   subject: string;
   text?: string;
   html: string;
@@ -23,9 +29,13 @@ export default async function formHandler(
 ) {
   try {
     const msg: Msg = {
-      to: `${req.body.email}`, // Change to your recipient
+      to: `${req.body.email}`,
       cc: 'me@dylanullrich.com',
-      from: 'me@dylanullrich.com', // Change to your verified sender
+      from: {
+        name: 'Dylan Ullrich',
+        email: 'contact@dylanullrich.com',
+      },
+      replyTo: 'me@dylanullrich.com',
       subject: `Thanks for your message, ${req.body.name}!`,
       html: `
       <head>
