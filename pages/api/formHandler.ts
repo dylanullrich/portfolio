@@ -29,30 +29,42 @@ export default async function formHandler(
       subject: `Thanks for your message, ${req.body.name}!`,
       html: `
       <head>
-        <style>
-        * {
-          background-color: rgb(15 23 42);;
-          color: rgb(156 163 175);
-          }
-        div {
-          padding: 12px;
-        }
-        
-        </style>
-      </head>
-      
+    <style>
+      * {
+        background-color: #0f172a;
+        color: #9ca3af;
+      }
+      h2,
+      h4 {
+        color: #d1d5db;
+      }
+
+      strong {
+        color: #67e8f9;
+      }
+      div {
+        padding: 12px;
+      }
+    </style>
+  </head>
+
   <div>
-  <h2>Hi ${req.body.name},</h2>
-  <h4>
-    Thank you for your email. I will be following up with you shortly from
-    <strong>me@dylanullrich.com</strong>.
-  </h4>
-  <p>You sent the following message:</p>
-  <p style="margin-left:30px;">${req.body.message}</p>
-  <p>
-    You will be contacted at: <strong>${req.body.email}</strong>.
-  </p>
-</div>
+    <h2>Hi ${req.body.name},</h2>
+      <h4>
+        Thank you for your email. I will be following up with you shortly from
+        <strong>me@dylanullrich.com</strong>.
+      </h4>
+      <h4>You will be contacted at: <strong>${req.body.email}</strong></h4>
+        <p>You sent the following message:</p>
+        <p style="margin-left: 30px;">${req.body.message}</p>
+      <h4>I am looking forward to speaking with you soon!</h4>
+      <h4>-Dylan Ullrich</h4>
+      <h4><a href="me@dylanullrich.com">me@dylanullrich.com</a></h4>
+      <h4>
+      P.S. Feel free to reply to this message if there is any additional
+      information you would like to include.
+      </h4>
+  </div>
       `,
     };
     await sgMail.send(msg);
