@@ -54,7 +54,7 @@ export default async function formHandler(
         Thank you for your email. I will be following up with you shortly from
         <strong>me@dylanullrich.com</strong>.
       </h4>
-      <h4>You will be contacted at: <strong>${req.body.email}</strong></h4>
+      <h4>You will be contacted at: <strong>${req.body.email}</strong>.</h4>
         <p>You sent the following message:</p>
         <p style="margin-left: 30px;">${req.body.message}</p>
       <h4>I am looking forward to speaking with you soon!</h4>
