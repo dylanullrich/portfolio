@@ -1,4 +1,4 @@
-# Dylan Ullrich | Full Stack Develope
+# Dylan Ullrich | Full Stack Developer
 
 Visit [dylanullrich.com](https://www.dylanullrich.com/)
 
