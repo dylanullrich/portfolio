@@ -13,11 +13,6 @@ export default function Header() {
     <>
       <Head>
         <title>Get Ullrich or Die Trying</title>
-        <script
-          defer
-          data-domain='dylanullrich.com'
-          src='https://plausible.io/js/plausible.js'
-        ></script>
       </Head>
       <header className='bg-slate-800'>
         <nav
