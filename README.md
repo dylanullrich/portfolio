@@ -1,5 +1,12 @@
-# portfolio
+# Dylan Ullrich | Full Stack Develope
 
-**This is a work in progress.**
+Visit [dylanullrich.com](https://www.dylanullrich.com/)
 
-This is the very beginning of my first portfolio website.
+Welcome to my Portfolio Repository.
+
+### Built with
+
+- TypeScript
+- React
+- Next.js
+- Tailwind
