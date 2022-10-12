@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <>
       <Head>
-        <title>Get Ullrich or Die Trying</title>
+        <title>Dylan Ullrich | Full Stack Developer</title>
       </Head>
       <header className='bg-slate-800'>
         <nav
@@ -27,7 +27,7 @@ export default function Header() {
                     src='/images/gudt-logo.svg'
                     width={100}
                     height={34}
-                    alt='Get Ullrich or Die Trying Logo'
+                    alt='Get (Dylan) Ullrich or Die Trying Logo'
                     priority
                   />
                 </a>
