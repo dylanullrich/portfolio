@@ -4,13 +4,17 @@ import Link from 'next/link';
 export default function Intro() {
   return (
     <div className='flex  h-[calc(100vh-72px)] flex-col items-center justify-center'>
-      <h2 className='text-lg font-semibold text-gray-500'>Hello, my name is</h2>
+      <p className='text-lg font-semibold text-gray-400'>Hi 👋, my name is</p>
 
-      <p className='mt-1 text-4xl font-bold tracking-tight text-teal-400 sm:text-5xl lg:text-6xl'>
+      <h1 className='mt-1 text-4xl font-bold tracking-tight text-teal-400 sm:text-5xl lg:text-6xl'>
         Dylan Ullrich.
+      </h1>
+      <p className='mt-1 flex max-w-xl items-center text-3xl font-bold text-sky-700 sm:text-4xl lg:text-5xl'>
+        Full Stack Developer
       </p>
-      <p className=' mt-5 max-w-xl text-xl text-gray-500'>
-        I am a Full Stack Developer.
+
+      <p className='mt-1 flex max-w-xl text-xl text-gray-400'>
+        with an eye for the big picture.
       </p>
       <div className='flex gap-4'>
         <div className='py-3 hover:scale-110'>

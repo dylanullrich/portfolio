@@ -29,7 +29,7 @@ export default function DescriptionRight({
           <h3 className='text-2xl font-bold tracking-tight text-white sm:text-3xl'>
             {projectName}
           </h3>
-          <p className='mt-3 max-w-xl text-lg text-gray-400'>{description}</p>
+          <p className='mt-3 max-w-xl text-lg text-gray-300'>{description}</p>
           <div className='max-w-fit py-3  hover:scale-110'>
             <Link href={url} passHref>
               <a className='cursor-pointer  hover:scale-110'>
