@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
-import { config } from '../../config';
+import { config } from '../../../config';
+import type { APIRoute } from 'astro';
 
 sgMail.setApiKey(config.apiKey);
 
@@ -23,20 +23,22 @@ type Msg = {
   html: string;
 };
 
-export default async function formHandler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>,
-) {
-  try {
+export const post: APIRoute = async ({ request }) => {
+  if (request.headers.get('Content-Type') === 'application/json') {
+    // const body = await request.json();
+    // const email = body.email;
+    // const name = body.name;
+    // const message = body.message;
+
     const msg: Msg = {
-      to: `${req.body.email}`,
+      to: `pooperewre@xfranklin.com,`,
       cc: 'me@dylanullrich.com',
       from: {
         name: 'Dylan Ullrich',
         email: 'contact@dylanullrich.com',
       },
       replyTo: 'me@dylanullrich.com',
-      subject: `Thanks for your message, ${req.body.name}!`,
+      subject: `Thanks for your message, poop!`,
       html: `
       <head>
     <style>
@@ -57,14 +59,14 @@ export default async function formHandler(
     </style>
   </head>
   <div>
-    <h2>Hi ${req.body.name},</h2>
+    <h2>Hi,</h2>
       <h4>
         Thank you for your email. I will be following up with you shortly from
         <strong>me@dylanullrich.com</strong>.
       </h4>
-      <h4>You will be contacted at: <strong>${req.body.email}</strong>.</h4>
+      <h4>You will be contacted at: <str</strong>.</h4>
         <p>You sent the following message:</p>
-        <p style="margin-left: 30px;">${req.body.message}</p>
+        <p style="margin-left: 30px;">$/p>
       <h4>I am looking forward to speaking with you soon!</h4>
       <h4>-Dylan Ullrich</h4>
       <h4><a href="me@dylanullrich.com">me@dylanullrich.com</a></h4>
@@ -75,8 +77,17 @@ export default async function formHandler(
   </div>
       `,
     };
+    console.log('Email sent');
     await sgMail.send(msg);
-  } catch (error) {
-    console.error(error);
+    return {
+      body: JSON.stringify({
+        message: 'Email sent',
+      }),
+    };
   }
-}
+
+  return new Response(
+    JSON.stringify({ mesage: 'There was a problem with the call.' }),
+    { status: 400 },
+  );
+};

@@ -1,5 +1,5 @@
 const getEnvironmentVariable = (environmentVariable: string): string => {
-  const unvalidatedEnvironmentVariable = process.env[environmentVariable];
+  const unvalidatedEnvironmentVariable = import.meta.env[environmentVariable];
   if (!unvalidatedEnvironmentVariable) {
     throw new Error(
       `Couldn't find environment variable: ${environmentVariable}`,
