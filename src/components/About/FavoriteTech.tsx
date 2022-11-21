@@ -75,10 +75,11 @@ const favoriteList = techList.map((item) => {
     >
       <a
         href={item.docsUrl}
-        className='cursor-pointer'
+        // className='cursor-pointer'
       >
-        <div className='p-2 text-center'>
+        <div className='p-2 flex flex-col justify-center items-center'>
           <img
+            // className=' self-center'
             src={item.src}
             alt={`${item.techName} logo`}
             width='50'
@@ -93,7 +94,7 @@ const favoriteList = techList.map((item) => {
 
 export default function FavoriteTech() {
   return (
-    <div className='mx-auto max-w-7xl py-8 sm:w-1/2 sm:py-4 sm:px-6'>
+    <div className='py-8 sm:w-1/2 sm:py-4 sm:px-6'>
       <div className='divide-y divide-gray-200 overflow-hidden rounded-lg bg-slate-700 shadow'>
         <div className='border-b border-gray-200 px-4 py-5'>
           <h3 className='text-center text-lg font-medium leading-6 text-white'>
