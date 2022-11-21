@@ -1,6 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
 interface TechImage {
   src: string;
   techName: string;
@@ -76,19 +73,20 @@ const favoriteList = techList.map((item) => {
       className='rounded-lg bg-gray-100 shadow hover:scale-110'
       key={item.techName}
     >
-      <Link href={item.docsUrl} passHref>
-        <a className='cursor-pointer'>
-          <div className='p-2 text-center'>
-            <Image
-              src={item.src}
-              alt={`${item.techName} logo`}
-              width={50}
-              height={50}
-            />
-            <p>{item.techName}</p>
-          </div>
-        </a>
-      </Link>
+      <a
+        href={item.docsUrl}
+        className='cursor-pointer'
+      >
+        <div className='p-2 text-center'>
+          <img
+            src={item.src}
+            alt={`${item.techName} logo`}
+            width='50'
+            height='50'
+          />
+          <p>{item.techName}</p>
+        </div>
+      </a>
     </div>
   );
 });
