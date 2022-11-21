@@ -41,32 +41,30 @@ const projects: Project[] = [
 export default function Projects() {
   return (
     <section className='px-6 md:px-24'>
-      <div className='max-w-5xl'>
-        <DescriptionLeft
-          projectName={projects[0].name}
-          description={projects[0].description}
-          imageUrl={projects[0].imageUrl}
-          url={projects[0].url}
-        />
-        <DescriptionRight
-          projectName={projects[1].name}
-          description={projects[1].description}
-          imageUrl={projects[1].imageUrl}
-          url={projects[1].url}
-        />
-        <DescriptionLeft
-          projectName={projects[2].name}
-          description={projects[2].description}
-          imageUrl={projects[2].imageUrl}
-          url={projects[2].url}
-        />
-        <DescriptionRight
-          projectName={projects[3].name}
-          description={projects[3].description}
-          imageUrl={projects[3].imageUrl}
-          url={projects[3].url}
-        />
-      </div>
+      <DescriptionLeft
+        projectName={projects[0].name}
+        description={projects[0].description}
+        imageUrl={projects[0].imageUrl}
+        url={projects[0].url}
+      />
+      <DescriptionRight
+        projectName={projects[1].name}
+        description={projects[1].description}
+        imageUrl={projects[1].imageUrl}
+        url={projects[1].url}
+      />
+      <DescriptionLeft
+        projectName={projects[2].name}
+        description={projects[2].description}
+        imageUrl={projects[2].imageUrl}
+        url={projects[2].url}
+      />
+      <DescriptionRight
+        projectName={projects[3].name}
+        description={projects[3].description}
+        imageUrl={projects[3].imageUrl}
+        url={projects[3].url}
+      />
     </section>
   );
 }
