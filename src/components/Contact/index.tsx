@@ -1,9 +1,10 @@
+import React, { useState } from 'react';
+
 interface FormData {
   name: { value: string };
   email: { value: string };
   message: { value: string };
 }
-import { useState } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>();
