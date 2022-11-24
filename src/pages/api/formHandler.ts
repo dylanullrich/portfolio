@@ -25,20 +25,24 @@ type Msg = {
 
 export const post: APIRoute = async ({ request }) => {
   if (request.headers.get('Content-Type') === 'application/json') {
-    // const body = await request.json();
-    // const email = body.email;
-    // const name = body.name;
-    // const message = body.message;
+    const body = await request.json();
+    const email = body.email;
+    const name = body.name;
+    const message = body.message;
+
+    console.log('email', email);
+    console.log('name', name);
+    console.log('message', message);
 
     const msg: Msg = {
-      to: `pooperewre@xfranklin.com,`,
+      to: `${email}`,
       cc: 'me@dylanullrich.com',
       from: {
         name: 'Dylan Ullrich',
         email: 'contact@dylanullrich.com',
       },
       replyTo: 'me@dylanullrich.com',
-      subject: `Thanks for your message, poop!`,
+      subject: `Thanks for your message, ${name}!`,
       html: `
       <head>
     <style>
@@ -59,17 +63,17 @@ export const post: APIRoute = async ({ request }) => {
     </style>
   </head>
   <div>
-    <h2>Hi,</h2>
+    <h2>Hi ${name},</h2>
       <h4>
         Thank you for your email. I will be following up with you shortly from
         <strong>me@dylanullrich.com</strong>.
       </h4>
-      <h4>You will be contacted at: <str</strong>.</h4>
+      <h4>You will be contacted at: <strong>${email}</strong>.</h4>
         <p>You sent the following message:</p>
-        <p style="margin-left: 30px;">$/p>
+        <p style="margin-left: 30px;">${message}</p>
       <h4>I am looking forward to speaking with you soon!</h4>
       <h4>-Dylan Ullrich</h4>
-      <h4><a href="me@dylanullrich.com">me@dylanullrich.com</a></h4>
+      <h4><a href="mailto:me@dylanullrich.com">me@dylanullrich.com</a></h4>
       <h4>
       P.S. Feel free to reply to this message if there is any additional
       information you would like to include.
@@ -83,6 +87,7 @@ export const post: APIRoute = async ({ request }) => {
       body: JSON.stringify({
         message: 'Email sent',
       }),
+      status: 200,
     };
   }
 
