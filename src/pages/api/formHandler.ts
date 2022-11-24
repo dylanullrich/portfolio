@@ -30,10 +30,6 @@ export const post: APIRoute = async ({ request }) => {
     const name = body.name;
     const message = body.message;
 
-    console.log('email', email);
-    console.log('name', name);
-    console.log('message', message);
-
     const msg: Msg = {
       to: `${email}`,
       cc: 'me@dylanullrich.com',
