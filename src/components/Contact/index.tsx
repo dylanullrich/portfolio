@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 interface FormData {
   name: { value: string };
   email: { value: string };
