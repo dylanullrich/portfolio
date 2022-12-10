@@ -77,7 +77,7 @@ const favoriteList = techList.map((item) => {
         href={item.docsUrl}
         // className='cursor-pointer'
       >
-        <div className='p-2 flex flex-col justify-center items-center'>
+        <div className='flex flex-col items-center justify-center p-2'>
           <img
             // className=' self-center'
             src={item.src}

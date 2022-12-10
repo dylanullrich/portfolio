@@ -2,8 +2,6 @@ import sgMail from '@sendgrid/mail';
 import { config } from '../../../config';
 import type { APIRoute } from 'astro';
 
-sgMail.setApiKey(config.apiKey);
-
 type Data = {
   name: string;
 };
@@ -22,6 +20,8 @@ type Msg = {
   text?: string;
   html: string;
 };
+
+sgMail.setApiKey(config.apiKey);
 
 export const post: APIRoute = async ({ request }) => {
   if (request.headers.get('Content-Type') === 'application/json') {
