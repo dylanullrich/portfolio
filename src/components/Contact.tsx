@@ -48,7 +48,7 @@ export default function Contact() {
 
   return (
     <section className="overflow-hidden px-4 pb-20 sm:px-12">
-      <div className="relative mx-auto max-w-xl rounded-lg bg-slate-700 p-12">
+      <div className="relative mx-auto max-w-xl rounded-lg bg-slate-600 p-12 shadow-lg shadow-black">
         {!submitted ? (
           <>
             <div className="text-center">
