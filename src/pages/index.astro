@@ -9,17 +9,15 @@ import Contact from "../components/Contact";
 ---
 
 <Layout title="Dylan Ullrich | Full Stack Developer">
-  <main class="bg-slate-900">
-    <div class="mx-auto max-w-7xl">
-      <Intro />
-      <Border sectionName="About" />
-      <About />
-      <Border sectionName="Projects" />
-      <Projects />
-      <Border sectionName="Experience" />
-      <Experience />
-      <Border sectionName="Contact" />
-      <Contact client:only="react" />
-    </div>
+  <main class="mx-auto max-w-7xl">
+    <Intro />
+    <Border sectionName="About" />
+    <About />
+    <Border sectionName="Projects" />
+    <Projects />
+    <Border sectionName="Experience" />
+    <Experience />
+    <Border sectionName="Contact" />
+    <Contact client:only="react" />
   </main>
 </Layout>
