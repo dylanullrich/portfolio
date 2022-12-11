@@ -47,7 +47,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="overflow-hidden py-24 px-4 sm:px-12 lg:py-24">
+    <section className="overflow-hidden px-4 pb-20 sm:px-12">
       <div className="relative mx-auto max-w-xl rounded-lg bg-slate-700 p-12">
         {!submitted ? (
           <>
