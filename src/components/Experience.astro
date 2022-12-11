@@ -51,7 +51,7 @@ const experiences: Job[] = [
 ];
 ---
 
-<section class="flex items-center justify-center px-4 sm:px-12">
+<section class="flex items-center justify-center px-4 text-sky-100 sm:px-12">
   <div class="flex flex-col">
     {
       experiences.map((item) => (
@@ -68,9 +68,7 @@ const experiences: Job[] = [
               />
             </div>
 
-            <div
-              class={`${item.class} relative mx-auto text-center text-gray-300`}
-            >
+            <div class={`${item.class} relative mx-auto text-center`}>
               <p class="text-xs sm:text-sm">{item.companyName}</p>
               <p class="sm:text-md text-sm font-bold">{item.jobTitle}</p>
               <p class="text-xs font-light">{item.timeActive}</p>

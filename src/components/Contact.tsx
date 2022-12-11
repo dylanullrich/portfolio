@@ -52,10 +52,10 @@ export default function Contact() {
         {!submitted ? (
           <>
             <div className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-300 sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Send a message
               </h2>
-              <p className="mt-4 text-lg leading-6 text-gray-500">
+              <p className="mt-4 text-lg leading-6 text-teal-100">
                 Reach out, and I will get back to you shortly.
               </p>
             </div>
