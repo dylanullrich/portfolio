@@ -1,0 +1,92 @@
+---
+export interface Job {
+  companyName: string;
+  jobTitle: string;
+  timeActive: string;
+  imgUrl: string;
+  class: string;
+}
+
+const classes = {
+  textLeft: 'pr-64 sm:pr-96',
+  textRight: 'pl-64 sm:pl-96',
+};
+
+const experiences: Job[] = [
+  {
+    companyName: 'BaseHubs',
+    jobTitle: 'Software Developer',
+    timeActive: '2022',
+    imgUrl: '/images/BaseHubslogo.png',
+    class: classes.textLeft,
+  },
+  {
+    companyName: 'Code Fellows',
+    jobTitle: 'Advanced Software Development',
+    timeActive: '2022',
+    imgUrl: '/images/cflogo.png',
+    class: classes.textRight,
+  },
+  {
+    companyName: 'BaseHubs',
+    jobTitle: 'Business Development',
+    timeActive: '2021-2022',
+    imgUrl: '/images/BaseHubslogo.png',
+    class: classes.textLeft,
+  },
+  {
+    companyName: 'University of Washington',
+    jobTitle: 'Bachelor of Arts',
+    timeActive: '2021-2022',
+    imgUrl: '/images/uwlogo.svg',
+    class: classes.textRight,
+  },
+  {
+    companyName: 'US Army',
+    jobTitle: '11B - Infantry',
+    timeActive: '2017-2020',
+    imgUrl: '/images/usarmylogo.png',
+    class: classes.textLeft,
+  },
+];
+---
+
+<section class='py-12 max-w-7xl flex items-center justify-center px-4 sm:px-6'>
+  <div class='flex flex-col'>
+    {
+      experiences.map((item) => (
+        <>
+          <div
+            class={`relative flex flex-row items-center justify-center gap-4`}
+          >
+            <div class='absolute left-1/2 mx-auto flex-auto -translate-x-1/2 items-center justify-center'>
+              <img
+                src={item.imgUrl}
+                alt={`${item.companyName} logo`}
+                width='64'
+                height='64'
+              />
+            </div>
+
+            <div
+              class={`${item.class} relative mx-auto text-center text-gray-300`}
+            >
+              <p class='text-xs sm:text-sm'>{item.companyName}</p>
+              <p class='sm:text-md text-sm font-bold'>{item.jobTitle}</p>
+              <p class='text-xs font-light'>{item.timeActive}</p>
+            </div>
+          </div>
+
+          {item.companyName !== 'US Army' && (
+            <div class='mx-auto flex justify-center px-4 sm:px-6'>
+              <span
+                class='my-4 h-32 w-0.5 bg-teal-700'
+                aria-hidden='true'
+              />
+            </div>
+          )}
+        </>
+      ))
+    }
+  </div>
+</section>
