@@ -9,14 +9,14 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Assignment Buster",
-    tech: ["Slack API", "Canvas API", "JavaScript", "Node.js"],
+    tech: ["JavaScript", "Node.js", "Slack API", "Canvas API"],
     description:
       "Assignment Buster is a Slack App that helps students stay up-to-date with their coursework. Students are able to quickly access their Canvas assignments utilzing slash commands in slack.",
     url: "https://github.com/dylanullrich/assignment-buster",
   },
   {
     title: "Captain Caption",
-    tech: ["Auth0", "MongoDB", "JavaScript", "Node.js"],
+    tech: ["JavaScript", "Node.js", "Auth0", "MongoDB"],
     description:
       "Allows users to transcribe and translate spoken language utilizing the speech to text API. Users can log in and save their transriptions to MongoDB, which is guarded with Auth0.",
     url: "https://github.com/dylanullrich/captain-caption",
@@ -29,7 +29,7 @@ const projects: Project[] = [
   },
   {
     title: "Serverless API",
-    tech: ["AWS Lambda", "JavaScript", "Node.js"],
+    tech: ["JavaScript", "Node.js", "AWS Lambda"],
     description:
       "AWS Lambda Serverless API. This example shows how I often use serverless functions rather than a more traditional server.",
     url: "https://github.com/dylanullrich/serverless-api",
@@ -59,7 +59,7 @@ const projects: Project[] = [
         <div class="grid grid-cols-2 gap-1 lg:flex">
           {project.tech.map((tech) => (
             <>
-              <span class="inline-flex items-center rounded-full bg-fuchsia-100 px-3 py-0.5 text-sm font-medium text-fuchsia-900">
+              <span class="inline-flex items-center rounded-full bg-teal-100 px-3 py-0.5 text-sm font-medium text-teal-900">
                 {tech}
               </span>
             </>
