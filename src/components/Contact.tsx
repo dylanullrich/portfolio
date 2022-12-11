@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "preact/hooks";
 
 interface FormData {
   name: { value: string };
@@ -10,7 +10,7 @@ export default function Contact() {
   const [formData, setFormData] = useState<FormData>();
   const [submitted, setSubmitted] = useState<Boolean>(false);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: any) {
     e.preventDefault();
     setSubmitted(true);
 
