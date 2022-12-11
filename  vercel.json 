@@ -1,5 +1,4 @@
 {
-  "cleanUrls": true,
   "rewrites": [
     {
       "source": "/plausible/js/script.js",
