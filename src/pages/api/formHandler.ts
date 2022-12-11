@@ -1,6 +1,6 @@
-import sgMail from '@sendgrid/mail';
-import { config } from '../../../config';
-import type { APIRoute } from 'astro';
+import sgMail from "@sendgrid/mail";
+import { config } from "../../../config";
+import type { APIRoute } from "astro";
 
 type Data = {
   name: string;
@@ -24,7 +24,7 @@ type Msg = {
 sgMail.setApiKey(config.apiKey);
 
 export const post: APIRoute = async ({ request }) => {
-  if (request.headers.get('Content-Type') === 'application/json') {
+  if (request.headers.get("Content-Type") === "application/json") {
     const body = await request.json();
     const email = body.email;
     const name = body.name;
@@ -32,12 +32,12 @@ export const post: APIRoute = async ({ request }) => {
 
     const msg: Msg = {
       to: `${email}`,
-      cc: 'me@dylanullrich.com',
+      cc: "me@dylanullrich.com",
       from: {
-        name: 'Dylan Ullrich',
-        email: 'contact@dylanullrich.com',
+        name: "Dylan Ullrich",
+        email: "contact@dylanullrich.com",
       },
-      replyTo: 'me@dylanullrich.com',
+      replyTo: "me@dylanullrich.com",
       subject: `Thanks for your message, ${name}!`,
       html: `
       <head>
@@ -77,18 +77,18 @@ export const post: APIRoute = async ({ request }) => {
   </div>
       `,
     };
-    console.log('Email sent');
+    console.log("Email sent");
     await sgMail.send(msg);
     return {
       body: JSON.stringify({
-        message: 'Email sent',
+        message: "Email sent",
       }),
       status: 200,
     };
   }
 
   return new Response(
-    JSON.stringify({ mesage: 'There was a problem with the call.' }),
-    { status: 400 },
+    JSON.stringify({ mesage: "There was a problem with the call." }),
+    { status: 400 }
   );
 };

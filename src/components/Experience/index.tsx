@@ -1,5 +1,5 @@
-import TextRight from './TextRight';
-import TextLeft from './TextLeft';
+import TextRight from "./TextRight";
+import TextLeft from "./TextLeft";
 export interface Job {
   companyName: string;
   jobTitle: string;
@@ -9,39 +9,39 @@ export interface Job {
 
 const experience: Job[] = [
   {
-    companyName: 'BaseHubs',
-    jobTitle: 'Software Developer',
-    timeActive: '2022',
-    imgUrl: '/images/BaseHubslogo.png',
+    companyName: "BaseHubs",
+    jobTitle: "Software Developer",
+    timeActive: "2022",
+    imgUrl: "/images/BaseHubslogo.png",
   },
   {
-    companyName: 'Code Fellows',
-    jobTitle: 'Advanced Software Development',
-    timeActive: '2022',
-    imgUrl: '/images/cflogo.png',
+    companyName: "Code Fellows",
+    jobTitle: "Advanced Software Development",
+    timeActive: "2022",
+    imgUrl: "/images/cflogo.png",
   },
   {
-    companyName: 'BaseHubs',
-    jobTitle: 'Business Development',
-    timeActive: '2021-2022',
-    imgUrl: '/images/BaseHubslogo.png',
+    companyName: "BaseHubs",
+    jobTitle: "Business Development",
+    timeActive: "2021-2022",
+    imgUrl: "/images/BaseHubslogo.png",
   },
   {
-    companyName: 'University of Washington',
-    jobTitle: 'BA - Law, Economics, and Public Policy',
-    timeActive: '2021-2022',
-    imgUrl: '/images/uwlogo.svg',
+    companyName: "University of Washington",
+    jobTitle: "BA - Law, Economics, and Public Policy",
+    timeActive: "2021-2022",
+    imgUrl: "/images/uwlogo.svg",
   },
   {
-    companyName: 'US Army',
-    jobTitle: '11B - Infantry',
-    timeActive: '2017-2020',
-    imgUrl: '/images/usarmylogo.png',
+    companyName: "US Army",
+    jobTitle: "11B - Infantry",
+    timeActive: "2017-2020",
+    imgUrl: "/images/usarmylogo.png",
   },
 ];
 export default function Work() {
   return (
-    <div className='py-12'>
+    <div className="py-12">
       <TextLeft
         companyName={experience[0].companyName}
         jobTitle={experience[0].jobTitle}
@@ -50,11 +50,8 @@ export default function Work() {
       />
 
       {/* LINE CONNECTOR */}
-      <div className='mx-auto flex max-w-7xl justify-center px-4 sm:px-6'>
-        <span
-          className='my-4 h-32 w-0.5 bg-teal-700'
-          aria-hidden='true'
-        ></span>
+      <div className="mx-auto flex max-w-7xl justify-center px-4 sm:px-6">
+        <span className="my-4 h-32 w-0.5 bg-teal-700" aria-hidden="true"></span>
       </div>
 
       <TextRight
@@ -64,11 +61,8 @@ export default function Work() {
         imgUrl={experience[1].imgUrl}
       />
       {/* LINE CONNECTOR */}
-      <div className='mx-auto flex max-w-7xl justify-center px-4 sm:px-6'>
-        <span
-          className='my-4 h-32 w-0.5 bg-teal-700'
-          aria-hidden='true'
-        ></span>
+      <div className="mx-auto flex max-w-7xl justify-center px-4 sm:px-6">
+        <span className="my-4 h-32 w-0.5 bg-teal-700" aria-hidden="true"></span>
       </div>
       <TextLeft
         companyName={experience[2].companyName}
@@ -77,11 +71,8 @@ export default function Work() {
         imgUrl={experience[2].imgUrl}
       />
       {/* LINE CONNECTOR */}
-      <div className='mx-auto flex max-w-7xl justify-center px-4 sm:px-6'>
-        <span
-          className='my-4 h-32 w-0.5 bg-teal-700'
-          aria-hidden='true'
-        ></span>
+      <div className="mx-auto flex max-w-7xl justify-center px-4 sm:px-6">
+        <span className="my-4 h-32 w-0.5 bg-teal-700" aria-hidden="true"></span>
       </div>
       <TextRight
         companyName={experience[3].companyName}
@@ -90,11 +81,8 @@ export default function Work() {
         imgUrl={experience[3].imgUrl}
       />
       {/* LINE CONNECTOR */}
-      <div className='mx-auto flex max-w-7xl justify-center px-4 sm:px-6'>
-        <span
-          className='my-4 h-32 w-0.5 bg-teal-700'
-          aria-hidden='true'
-        ></span>
+      <div className="mx-auto flex max-w-7xl justify-center px-4 sm:px-6">
+        <span className="my-4 h-32 w-0.5 bg-teal-700" aria-hidden="true"></span>
       </div>
       <TextLeft
         companyName={experience[4].companyName}
