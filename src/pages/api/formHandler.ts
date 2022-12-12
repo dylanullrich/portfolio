@@ -78,8 +78,9 @@ export const post: APIRoute = async ({ request }) => {
       `,
     };
     console.log("Email sent");
-    await sgMail.send(msg);
-    return new Response(JSON.stringify({ message: "Email sent" }), {
+    const messageSent = await sgMail.send(msg);
+    // @ts-ignore
+    return new Response(messageSent, {
       status: 200,
     });
   }
