@@ -1,4 +1,5 @@
 ---
+import { SEO } from "astro-seo";
 export interface Props {
   title: string;
 }
@@ -15,8 +16,13 @@ const navigation = [
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <SEO
+  description="Dylan Ullrich is a Software Developer who is dedicated to building scalable, performant, and accessible web applications."
+  canonical="https://www.dylanullrich.com/"
+  />
+  
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
