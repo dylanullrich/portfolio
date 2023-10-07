@@ -1,23 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Border from '../components/Border.astro';
-import Intro from '../components/Intro.astro';
-import About from '../components/About.astro';
-import Projects from '../components/Projects.astro';
-import Experience from '../components/Experience.astro';
-import Contact from '../components/Contact.astro';
 ---
 
 <Layout title="Dylan Ullrich | Full Stack Developer">
-  <main class="mx-auto max-w-7xl">
-    <Intro />
-    <Border sectionName="About" />
-    <About />
-    <Border sectionName="Projects" />
-    <Projects />
-    <Border sectionName="Experience" />
-    <Experience />
-    <Border sectionName="Contact" />
-    <Contact />
-  </main>
+  <section
+    class="mx-auto flex flex-col items-center justify-center text-sky-100"
+  >
+    <div class="text-center">
+      <p class="text-lg font-semibold">Hi 👋, my name is</p>
+      <h1
+        class="mt-1 text-4xl font-bold tracking-tight text-teal-400 sm:text-5xl lg:text-6xl"
+      >
+        Dylan Ullrich.
+      </h1>
+      <p
+        class="mt-1 flex max-w-xl items-center text-3xl font-bold text-sky-700 sm:text-4xl lg:text-5xl"
+      >
+        Full Stack Developer
+      </p>
+
+      <p class="mt-1 max-w-xl text-xl">with an eye for the big picture.</p>
+      <div class="flex justify-center gap-4">
+        <div class="py-3 hover:scale-110">
+          <a href="https://github.com/dylanullrich/" class="cursor-pointer">
+            <img
+              src="/images/GitHub-Mark-Light-120px-plus.png"
+              alt="link to github"
+              width="32"
+              height="32"
+            />
+          </a>
+        </div>
+        <div class="py-3 hover:scale-110">
+          <a href="mailto:me@dylanullrich.com" class="cursor-pointer">
+            <img
+              src="/images/protonmail.svg"
+              alt="link to linkedin"
+              width="32"
+              height="32"
+            />
+          </a>
+        </div>
+        <div class="py-3 hover:scale-110">
+          <a
+            href="https://www.linkedin.com/in/dsullrich/"
+            class="cursor-pointer"
+          >
+            <img
+              src="/images/linkedin.svg"
+              alt="link to linkedin"
+              width="32"
+              height="32"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
