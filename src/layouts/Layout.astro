@@ -6,13 +6,13 @@ export interface Props {
 const { title } = Astro.props;
 
 const navigation = [
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
+  { name: 'About', href: '#about' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Experience', href: '#experience' },
 ];
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -24,8 +24,7 @@ const navigation = [
       defer
       src="/stats/js/script.outbound-links.js"
       data-api="/stats/api/event"
-      data-domain="dylanullrich.com"
-    ></script>
+      data-domain="dylanullrich.com"></script>
   </head>
 
   <body class="bg-slate-900">
