@@ -10,6 +10,16 @@ const navigation = [
   { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
 ];
+
+let scriptSource: string | null = '/stats/js/script.outbound-links.js';
+let apiUrl: string | null = '/stats/api/event';
+let domain: string | null = 'dyllanullrich.com';
+
+if (Astro.url.hostname === 'localhost') {
+  scriptSource = null;
+  apiUrl = null;
+  domain = null;
+}
 ---
 
 <!doctype html>
@@ -20,11 +30,8 @@ const navigation = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <script
-      defer
-      src="/stats/js/script.outbound-links.js"
-      data-api="/stats/api/event"
-      data-domain="dylanullrich.com"></script>
+    <script defer src={scriptSource} data-api={apiUrl} data-domain={domain}
+    ></script>
   </head>
 
   <body class="bg-slate-900">
