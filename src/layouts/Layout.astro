@@ -1,14 +1,10 @@
 ---
+import { Icon } from 'astro-icon/components';
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-
-const navigation = [
-  { name: 'Blog', href: '/blog' },
-  { name: 'Projects', href: '/projects' },
-];
 
 let scriptSource: string | null = '/stats/js/script.outbound-links.js';
 let apiUrl: string | null = '/stats/api/event';
@@ -19,6 +15,43 @@ if (Astro.url.hostname === 'localhost') {
   apiUrl = null;
   domain = null;
 }
+
+const navigation = {
+  internal: [
+    {
+      icon: 'heroicons:folder-open',
+      name: 'Projects',
+      href: '/projects',
+    },
+    {
+      icon: 'heroicons:chat-bubble-bottom-center-text',
+      name: 'Blog',
+      href: '/blog',
+    },
+  ],
+  external: [
+    {
+      icon: 'line-md:github',
+      name: '',
+      href: 'https://github.com/dylanullrich',
+    },
+    {
+      icon: 'line-md:linkedin',
+      name: '',
+      href: 'https://www.linkedin.com/in/dsullrich',
+    },
+    /* {
+      icon: 'simple-icons:matrix',
+      name: '',
+      href: '',
+    }, */
+    {
+      icon: 'line-md:email',
+      name: '',
+      href: 'mailto:dev@dylan.cat',
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -33,9 +66,9 @@ if (Astro.url.hostname === 'localhost') {
     ></script>
   </head>
 
-  <body class="bg-slate-950">
-    <header class="bg-slate-900">
-      <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
+  <body class="bg-slate-950 flex flex-col h-screen">
+    <header class="bg-slate-900 h-16">
+      <nav class="mx-auto px-4 max-w-[1920px]" aria-label="Top">
         <div class="flex w-full items-center justify-between py-1.5">
           <div class="flex items-center">
             <a href="/">
@@ -46,15 +79,41 @@ if (Astro.url.hostname === 'localhost') {
               />
             </a>
           </div>
-          <div class="ml-10 space-x-4">
-            <div class="ml-10 space-x-8 lg:block">
+          <div class="flex space-x-10">
+            <div class="flex space-x-5">
               {
-                navigation.map((link) => (
+                navigation.internal.map((link) => (
                   <a
                     href={link.href}
-                    class="text-base font-medium text-gray-400 hover:text-gray-100"
+                    title={link.name || link.href}
+                    target={link.href.startsWith('h') ? '_blank' : '_self'}
+                    class="flex cursor-pointer items-center text-lg font-medium text-gray-400 hover:text-gray-100"
                   >
-                    {link.name}
+                    {link.icon ? (
+                      <Icon name={link.icon} class="mr-2" size={15} />
+                    ) : (
+                      ''
+                    )}
+                    <p>{link.name}</p>
+                  </a>
+                ))
+              }
+            </div>
+            <div class="flex space-x-5">
+              {
+                navigation.external.map((link) => (
+                  <a
+                    href={link.href}
+                    title={link.name || link.href}
+                    target={link.href.startsWith('h') ? '_blank' : '_self'}
+                    class="flex cursor-pointer items-center text-lg font-medium text-gray-400 hover:text-gray-100"
+                  >
+                    {link.icon ? (
+                      <Icon name={link.icon} class="mr-2" size={28} />
+                    ) : (
+                      ''
+                    )}
+                    <p>{link.name}</p>
                   </a>
                 ))
               }
@@ -63,19 +122,13 @@ if (Astro.url.hostname === 'localhost') {
         </div>
       </nav>
     </header>
-    <main>
+    <main class="flex-1">
       <slot />
     </main>
-    <footer class="fixed bottom-0 w-full">
-      <div
-        class="mx-auto flex items-center justify-center py-5 px-4 sm:px-6 lg:px-8"
-      >
-        <div class="mt-8 md:order-1 md:mt-0">
-          <p class="text-center text-base text-gray-400">
-            &copy; 2023 Get Ullrich or Die Trying
-          </p>
-        </div>
-      </div>
+    <footer class="py-5">
+      <p class="text-center text-base text-gray-400">
+        &copy; 2023 Get Ullrich or Die Trying
+      </p>
     </footer>
   </body>
 </html>
