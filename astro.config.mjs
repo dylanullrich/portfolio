@@ -9,6 +9,9 @@ export default defineConfig({
   integrations: [tailwind(), icon({
     include: {
       heroicons: ['*'],
+      'simple-icons': ['*'],
+      'line-md': ['*'],
     },
-  })],
+  })
+  ],
 });
