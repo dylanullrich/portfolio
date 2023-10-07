@@ -1,1 +1,4 @@
-My Portfolio... converted to Astro. WIP.
+My Portfolio in Astro.
+
+Next iteration in progress.
+
