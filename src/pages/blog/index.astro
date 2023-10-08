@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+const blogEntries = await getCollection('blog');
+---
+
+<Layout title="Dylan Ullrich | Full Stack Developer">
+  <section
+    class="mx-auto flex flex-col items-center justify-center text-sky-100 h-full"
+  >
+    <h1 class="text-white">Blog</h1>
+    <ul>
+      {
+        blogEntries.map((blogPostEntry) => (
+          <li>
+            <a href={`/blog/${blogPostEntry.slug}`}>
+              {blogPostEntry.data.title}
+            </a>
+            <time datetime={blogPostEntry.data.pubDate.toISOString()}>
+              {blogPostEntry.data.pubDate.toDateString()}
+            </time>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>
