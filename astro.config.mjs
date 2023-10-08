@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [tailwind(), icon({
     include: {
       heroicons: ['*'],
+      eva: ['*'],
       'simple-icons': ['*'],
       'line-md': ['*'],
     },
