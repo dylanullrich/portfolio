@@ -10,12 +10,12 @@ const { iconSize, showText } = Astro.props as Props;
 
 const links = [
   {
-    icon: 'line-md:github',
+    icon: 'eva:github-outline',
     name: '',
     href: 'https://github.com/dylanullrich',
   },
   {
-    icon: 'line-md:linkedin',
+    icon: 'eva:linkedin-outline',
     name: '',
     href: 'https://www.linkedin.com/in/dsullrich',
   },
@@ -25,20 +25,20 @@ const links = [
       href: '',
     }, */
   {
-    icon: 'line-md:email',
+    icon: 'eva:email-outline',
     name: 'Contact',
     href: 'mailto:dev@dylan.cat',
   },
 ];
 
-if(showText === false) {
-  for(let i = 0; i < links.length; i++) {
+if (showText === false) {
+  for (let i = 0; i < links.length; i++) {
     links[i].name = '';
   }
 }
 ---
 
-<div class="flex justify-center items-center space-x-3">
+<div class="flex justify-center items-center space-x-5">
   {
     links.map((link) => (
       <a
@@ -48,7 +48,15 @@ if(showText === false) {
         class="flex cursor-pointer items-center text-lg font-medium text-gray-400 hover:text-gray-100"
       >
         <p class="text-xl">{link.name}</p>
-        {link.icon ? <Icon name={link.icon} class="ml-2" size={iconSize ? iconSize : 25} /> : ''}
+        {link.icon ? (
+          <Icon
+            name={link.icon}
+            class={link.name ? 'ml-2' : ''}
+            size={iconSize ? iconSize : 25}
+          />
+        ) : (
+          ''
+        )}
       </a>
     ))
   }
