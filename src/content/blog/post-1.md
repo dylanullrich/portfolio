@@ -10,8 +10,6 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-# H1
+## It's nice to meet you.
 
-## H2
-
-### H3
+Let's hang.
