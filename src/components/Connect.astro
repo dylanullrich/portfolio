@@ -1,0 +1,55 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  iconSize?: number;
+  showText?: boolean;
+}
+
+const { iconSize, showText } = Astro.props as Props;
+
+const links = [
+  {
+    icon: 'line-md:github',
+    name: '',
+    href: 'https://github.com/dylanullrich',
+  },
+  {
+    icon: 'line-md:linkedin',
+    name: '',
+    href: 'https://www.linkedin.com/in/dsullrich',
+  },
+  /* {
+      icon: 'simple-icons:matrix',
+      name: '',
+      href: '',
+    }, */
+  {
+    icon: 'line-md:email',
+    name: 'Contact',
+    href: 'mailto:dev@dylan.cat',
+  },
+];
+
+if(showText === false) {
+  for(let i = 0; i < links.length; i++) {
+    links[i].name = '';
+  }
+}
+---
+
+<div class="flex justify-center items-center space-x-3">
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        title={link.name || link.href}
+        target={link.href.startsWith('h') ? '_blank' : '_self'}
+        class="flex cursor-pointer items-center text-lg font-medium text-gray-400 hover:text-gray-100"
+      >
+        <p class="text-xl">{link.name}</p>
+        {link.icon ? <Icon name={link.icon} class="ml-2" size={iconSize ? iconSize : 25} /> : ''}
+      </a>
+    ))
+  }
+</div>
