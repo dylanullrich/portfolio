@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 
 interface Project {
   title: string;
@@ -51,13 +52,8 @@ const projects: Project[] = [
                 {project.title}
               </h3>
               <div class="h-12 w-12 pb-2 hover:scale-110">
-                <a href={project.url} class="max-w-fit hover:scale-110">
-                  <img
-                    src="/images/GitHub-Mark-Light-120px-plus.png"
-                    alt="Github logo that links to project"
-                    width="32"
-                    height="32"
-                  />
+                <a href={project.url} class="max-w-fit hover:scale-110" target="_blank">
+                <Icon name="line-md:github" size={32} />
                 </a>
               </div>
             </div>
