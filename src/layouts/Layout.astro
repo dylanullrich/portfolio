@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import Connect from '../components/Connect.astro';
 export interface Props {
   title: string;
 }
@@ -16,42 +17,18 @@ if (Astro.url.hostname === 'localhost') {
   domain = null;
 }
 
-const navigation = {
-  internal: [
-    {
-      icon: 'heroicons:folder-open',
-      name: 'Projects',
-      href: '/projects',
-    },
-    {
-      icon: 'heroicons:chat-bubble-bottom-center-text',
-      name: 'Blog',
-      href: '/blog',
-    },
-  ],
-  external: [
-    {
-      icon: 'line-md:github',
-      name: '',
-      href: 'https://github.com/dylanullrich',
-    },
-    {
-      icon: 'line-md:linkedin',
-      name: '',
-      href: 'https://www.linkedin.com/in/dsullrich',
-    },
-    /* {
-      icon: 'simple-icons:matrix',
-      name: '',
-      href: '',
-    }, */
-    {
-      icon: 'line-md:email',
-      name: 'Contact',
-      href: 'mailto:dev@dylan.cat',
-    },
-  ],
-};
+const navigation = [
+  {
+    icon: 'heroicons:folder-open',
+    name: 'Projects',
+    href: '/projects',
+  },
+  {
+    icon: 'heroicons:chat-bubble-bottom-center-text',
+    name: 'Blog',
+    href: '/blog',
+  },
+];
 ---
 
 <!doctype html>
@@ -80,7 +57,7 @@ const navigation = {
               />
             </a>
             {
-              navigation.internal.map((link) => (
+              navigation.map((link) => (
                 <a
                   href={link.href}
                   title={link.name || link.href}
@@ -97,33 +74,16 @@ const navigation = {
               ))
             }
           </div>
-          <div class="flex items-center space-x-3">
-            {
-              navigation.external.map((link) => (
-                <a
-                  href={link.href}
-                  title={link.name || link.href}
-                  target={link.href.startsWith('h') ? '_blank' : '_self'}
-                  class="flex cursor-pointer items-center text-lg font-medium text-gray-400 hover:text-gray-100"
-                >
-                  <p class="text-xl">{link.name}</p>
-                  {link.icon ? (
-                    <Icon name={link.icon} class="ml-2" size={25} />
-                  ) : (
-                    ''
-                  )}
-                </a>
-              ))
-            }
-          </div>
+          <Connect />
         </div>
       </nav>
     </header>
     <main class="flex-1">
       <slot />
     </main>
-    <footer class="py-5">
-      <p class="text-center text-base text-gray-400">
+    <footer class="py-5 mx-auto">
+      <Connect iconSize={20} showText={false} />
+      <p class="text-center text-base text-gray-400 pt-6">
         &copy; 2023 Get Ullrich or Die Trying
       </p>
     </footer>
