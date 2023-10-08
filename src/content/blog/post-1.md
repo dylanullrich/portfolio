@@ -1,15 +1,15 @@
 ---
 layout: '../../layouts/BlogPostLayout.astro'
 title: 'My First Blog Post'
-pubDate: 2022-07-01
-description: 'This is the first post of my new Astro blog.'
-author: 'Astro Learner'
+pubDate: 2023-10-07
+description: 'Testing out Astro Content'
+author: 'Dylan Ullrich'
 image:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
-    alt: 'The full Astro logo.'
+    url: ''
+    alt: ''
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-## It's nice to meet you.
+## Maybe there will be conent here someday...
 
-Let's hang.
+Maybe...
