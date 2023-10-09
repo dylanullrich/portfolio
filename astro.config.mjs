@@ -15,6 +15,7 @@ export default defineConfig({
       heroicons: ['*'],
       eva: ['*'],
       'simple-icons': ['*'],
+      'skill-icons': ['*'],
       'line-md': ['*'],
     },
   })
