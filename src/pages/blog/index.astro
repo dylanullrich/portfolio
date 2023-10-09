@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 const blogEntries = await getCollection('blog');
 ---
@@ -8,15 +9,24 @@ const blogEntries = await getCollection('blog');
   <section class="mx-auto h-full max-w-xl pt-24">
     <div>
       <h1 class="text-3xl text-white shadow-teal-500 text-shadow-lg">Blog</h1>
-      <ul class="mt-8 w-full text-gray-100">
+      <ul class="mt-2 w-full text-gray-100">
         {
           blogEntries.map((blogPostEntry) => (
-            <li class="hover:underline">
-              <a href={`/blog/${blogPostEntry.slug}`}>
-                {blogPostEntry.data.title}
+            <li class="pt-6 hover:underline">
+              <a
+                href={`/blog/${blogPostEntry.slug}`}
+                class="flex items-center justify-between"
+              >
+                <div class="flex items-center">
+                  <Icon
+                    name="heroicons:newspaper-solid"
+                    class="mr-4 text-gray-100 shadow-teal-500 drop-shadow-custom"
+                  />
+                  <h2>{blogPostEntry.data.title}</h2>
+                </div>
                 <time
                   datetime={blogPostEntry.data.pubDate.toISOString()}
-                  class="ml-24"
+                  class=""
                 >
                   {blogPostEntry.data.pubDate.toDateString()}
                 </time>
