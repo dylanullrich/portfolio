@@ -14,6 +14,7 @@ export default defineConfig({
     include: {
       heroicons: ['*'],
       eva: ['*'],
+      logos: ['*'],
       'simple-icons': ['*'],
       'skill-icons': ['*'],
       'line-md': ['*'],
