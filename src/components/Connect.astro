@@ -38,7 +38,7 @@ if (showText === false) {
 }
 ---
 
-<div class="flex justify-center items-center space-x-5">
+<div class="flex items-center justify-center space-x-5">
   {
     links.map((link) => (
       <a
@@ -46,7 +46,7 @@ if (showText === false) {
         title={link.name || link.href}
         target={link.href.startsWith('h') ? '_blank' : '_self'}
         rel="noopener noreferrer"
-        class="flex cursor-pointer items-center text-lg font-medium text-gray-400 hover:text-gray-100"
+        class="flex cursor-pointer items-center text-lg font-medium text-gray-400 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-gray-100 hover:shadow-teal-500 hover:drop-shadow-custom"
       >
         <p class="text-xl">{link.name}</p>
         {link.icon ? (
