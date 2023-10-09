@@ -4,13 +4,13 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <section class="mx-auto max-w-prose text-white pt-24">
+  <section class="mx-auto max-w-prose pt-24 text-white">
     <img src={frontmatter.image.url} width="100" alt={frontmatter.image.alt} />
-    <h1 class="pt-2 text-3xl">{frontmatter.title}</h1>
-    <p class="pt-2">{frontmatter.pubDate.slice(0, 10)}</p>
-    <p class="pt-2"><em>{frontmatter.description}</em></p>
-    <p class="pt-2">Written by: {frontmatter.author}</p>
-    <div class="prose prose-invert prose-slate pt-12">
+    <h1 class="pt-4 text-3xl text-shadow-lg shadow-teal-500">{frontmatter.title}</h1>
+    <p class="pt-4">{frontmatter.pubDate.slice(0, 10)}</p>
+    <p class="pt-4"><em>{frontmatter.description}</em></p>
+    <p class="pt-4">Written by: {frontmatter.author}</p>
+    <div class="prose prose-slate prose-invert pt-12">
       <slot />
     </div>
   </section>
