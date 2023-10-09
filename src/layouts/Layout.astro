@@ -43,9 +43,9 @@ const navigation = [
     ></script>
   </head>
 
-  <body class="bg-slate-950 flex flex-col h-screen">
-    <header class="bg-slate-900 h-min py-2">
-      <nav class="mx-auto px-4 max-w-[1920px]" aria-label="Top">
+  <body class="flex h-screen flex-col bg-slate-950">
+    <header class="h-min bg-slate-900 py-2">
+      <nav class="mx-auto max-w-[1920px] px-4" aria-label="Top">
         <div class="flex w-full items-center justify-between">
           <div class="flex items-center space-x-5">
             <a href="/" title="Home">
@@ -53,7 +53,7 @@ const navigation = [
                 src="/du-logo.png"
                 width="25"
                 alt="Developer Dylan"
-                class="hover:origin-bottom hover:rotate-6"
+                class="shadow-teal-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:drop-shadow-custom"
               />
             </a>
             {
@@ -62,7 +62,7 @@ const navigation = [
                   href={link.href}
                   title={link.name || link.href}
                   target={link.href.startsWith('h') ? '_blank' : '_self'}
-                  class="flex cursor-pointer items-center text-xl font-medium text-gray-400 hover:text-gray-100"
+                  class="flex cursor-pointer items-center text-xl font-medium text-gray-400 hover:text-gray-100 hover:shadow-teal-500 hover:drop-shadow-custom"
                 >
                   {link.icon ? (
                     <Icon name={link.icon} class="mr-2" size={18} />
@@ -81,9 +81,9 @@ const navigation = [
     <main class="flex-1">
       <slot />
     </main>
-    <footer class="py-5 mx-auto">
+    <footer class="mx-auto py-5">
       <Connect iconSize={20} showText={false} />
-      <p class="text-center text-base text-gray-400 pt-6">
+      <p class="pt-6 text-center text-base text-gray-400">
         &copy; 2023 Get Ullrich or Die Trying
       </p>
     </footer>
