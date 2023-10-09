@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .hvr-primary {
+    @apply shadow-teal-500 transition delay-100 duration-200 ease-in-out hover:-translate-y-1 hover:scale-105 hover:drop-shadow-custom
+  }
+}
