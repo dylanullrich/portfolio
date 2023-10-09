@@ -4,14 +4,10 @@ import { getCollection } from 'astro:content';
 const blogEntries = await getCollection('blog');
 ---
 
-<Layout title="Dylan Ullrich | Full Stack Developer">
-  <section class="pt-24 mx-auto max-w-xl h-full">
+<Layout title="Blog | Dylan Ullrich">
+  <section class="mx-auto h-full max-w-xl pt-24">
     <div>
-      <h1
-        class="text-shadow-lg shadow-teal-500 text-3xl text-white"
-      >
-        Blog
-      </h1>
+      <h1 class="text-3xl text-white shadow-teal-500 text-shadow-lg">Blog</h1>
       <ul class="mt-8 w-full text-gray-100">
         {
           blogEntries.map((blogPostEntry) => (
