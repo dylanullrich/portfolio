@@ -1,16 +1,140 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+const tech = [
+  {
+    name: 'JavaScript',
+    icon: 'logos:javascript',
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  },
+  {
+    name: 'TypeScript',
+    icon: 'logos:typescript-icon',
+    url: 'https://www.typescriptlang.org/',
+  },
+  {
+    name: 'Node.js',
+    icon: 'logos:nodejs-icon',
+    url: 'https://nodejs.org/en/',
+  },
+  {
+    name: 'Bash',
+    icon: 'logos:bash-icon',
+    url: 'https://www.gnu.org/software/bash/',
+  },
+  {
+    name: 'Lua',
+    icon: 'logos:lua',
+    url: 'https://www.lua.org/',
+  },
+  {
+    name: 'Nuxt',
+    icon: 'skill-icons:nuxtjs-dark',
+    url: 'https://nuxt.com/',
+  },
+  {
+    name: 'Next',
+    icon: 'skill-icons:nextjs-dark',
+    url: 'https://nextjs.org/',
+  },
+  {
+    name: 'Astro',
+    icon: 'skill-icons:astro',
+    url: 'https://astro.build/',
+  },
+  {
+    name: 'Tailwind',
+    icon: 'skill-icons:tailwindcss-dark',
+    url: 'https://tailwindcss.com/',
+  },
+];
 ---
-
-<Layout title="Dylan Ullrich | Full Stack Developer">
-  <section class="mx-auto flex h-full max-w-xl flex-col pt-24 text-sky-100">
-    <h1 class="text-3xl text-white shadow-teal-500 duration-500 text-shadow-lg">
-      Dylan Ullrich
-    </h1>
-    <div class="mt-8">
-      <p class="text-lg font-semibold">Hi 👋, my name is Dylan Ullrich.</p>
-
-      <p class="text-lg font-semibold">I am a Full Stack Developer.</p>
-    </div>
-  </section>
+<script>
+  const intro = document.getElementById('intro');
+  const tech = document.getElementById('tech');
+  const newClass =
+    'intro mx-auto flex h-full max-w-xl flex-col pt-24 text-sky-100 transition-transform delay-100 duration-500  ease-in';
+  addEventListener('load', () => {
+    if (intro) {
+      intro.className = newClass;
+    }
+    if (tech) {
+      tech.className = newClass;
+    }
+  });
+</script>
+<Layout title="Dylan Ullrich · Full Stack Developer">
+  <div>
+    <section
+      id="intro"
+      class="mx-auto flex max-w-xl rotate-45 flex-col pt-24 text-sky-100"
+    >
+      <h1
+        class="text-3xl text-white shadow-teal-500 duration-500 text-shadow-lg"
+      >
+        Dylan Ullrich · Software Developer
+      </h1>
+      <div class="mt-8">
+        <p class="text-lg font-semibold">Hi 👋, I'm Dylan.</p>
+        <p class="pt-4 text-lg font-semibold">I am a Software Developer.</p>
+        <p class="pt-2 text-lg font-semibold">
+          I enjoy start ups and opensource.
+        </p>
+        <p class="pt-2 text-lg font-semibold">
+          I use <a
+            href="https://neovim.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><Icon
+              name="skill-icons:neovim-dark"
+              class="inline-block"
+              size={28}
+            /></a
+          > to edit code.
+        </p>
+        <p class="pt-2 text-lg font-semibold">
+          I prefer to use the <a
+            href="https://en.wikipedia.org/wiki/Linux_kernel"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><Icon
+              name="skill-icons:linux-dark"
+              class="inline-block"
+              size={28}
+            /></a
+          > kernal.
+        </p>
+        <p class="pt-2 text-lg font-semibold">
+          I use <a
+            href="https://wiki.archlinux.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><Icon name="logos:archlinux" class="inline-block" size={28} /></a
+          > , btw.
+        </p>
+      </div>
+    </section>
+    <section
+      id="tech"
+      class="mx-auto flex max-w-xl -rotate-45 flex-col text-sky-100"
+    >
+      <div class="mt-8">
+        <p class="text-lg font-semibold">
+          Here's some stuff I've been using recently:
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+          {
+            tech.map((item) => (
+              <p class="truncate pr-6 pt-6 text-base font-semibold">
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                  <Icon name={item.icon} class="mr-2 inline-block" size={28} />
+                  {item.name}{' '}
+                </a>
+              </p>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
