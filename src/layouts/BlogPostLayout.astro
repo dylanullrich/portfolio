@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
 
 <Layout title={frontmatter.title}>
   <section class="mx-auto max-w-prose pt-24 text-white">
-    <h1 class="text-3xl text-shadow-lg shadow-teal-500">{frontmatter.title}</h1>
+    <h1 class="text-4xl font-extrabold">{frontmatter.title}</h1>
     <img src={frontmatter.image.url} width="100" class={frontmatter.image.url ? "pt-4" : "hidden"} alt={frontmatter.image.alt} />
     <p class="pt-4">{frontmatter.pubDate.slice(0, 10)}</p>
     <p class="pt-4"><em>{frontmatter.description}</em></p>
