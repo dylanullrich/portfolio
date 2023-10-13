@@ -35,7 +35,7 @@ const navigation = [
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-slate-950">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -46,9 +46,9 @@ const navigation = [
     ></script>
   </head>
 
-  <body class="flex h-screen flex-col bg-slate-900">
-    <header class="h-min bg-slate-800 py-2">
-      <nav class="mx-auto max-w-[1920px] px-4" aria-label="Top">
+  <body class="flex h-screen flex-col bg-slate-900 max-w-6xl mx-auto border-slate-800 border-x">
+    <header class="h-min mt-2 bg-slate-800 py-2 max-w-2xl mx-auto w-full rounded-3xl border-slate-700 border">
+      <nav class="px-4 w-full" aria-label="Top">
         <div class="flex w-full items-center justify-between">
           <div class="flex items-center space-x-5">
             <a href="/" title="Home">
@@ -81,7 +81,7 @@ const navigation = [
         </div>
       </nav>
     </header>
-    <main class="flex-1 px-4">
+    <main class="flex-1 px-4 max-w-4xl mx-auto w-full">
       <slot />
     </main>
     <footer class="mx-auto py-5">
