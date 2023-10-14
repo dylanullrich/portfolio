@@ -35,7 +35,7 @@ const navigation = [
 ---
 
 <!doctype html>
-<html lang="en" class="bg-slate-950">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -46,49 +46,113 @@ const navigation = [
     ></script>
   </head>
 
-  <body class="flex h-screen flex-col bg-slate-900 max-w-6xl mx-auto border-slate-800 border-x">
-    <header class="h-min mt-2 bg-slate-800 py-2 max-w-2xl mx-auto w-full rounded-3xl border-slate-700 border">
-      <nav class="px-4 w-full" aria-label="Top">
-        <div class="flex w-full items-center justify-between">
-          <div class="flex items-center space-x-5">
-            <a href="/" title="Home">
-              <img
-                src="/du-logo.png"
-                width="25"
-                alt="Developer Dylan"
-                class="hvr-primary"
-              />
-            </a>
-            {
-              navigation.map((link) => (
-                <a
-                  href={link.href}
-                  title={link.name || link.href}
-                  target={link.href.startsWith('h') ? '_blank' : '_self'}
-                  class="hvr-primary flex cursor-pointer items-center text-xl font-medium text-gray-400 hover:text-gray-100"
-                >
-                  {link.icon ? (
-                    <Icon name={link.icon} class="mr-2" size={18} />
-                  ) : (
-                    ''
-                  )}
-                  <p>{link.name}</p>
-                </a>
-              ))
-            }
+  <body class="h-full w-full bg-slate-950 px-2">
+    <div
+      class="mx-auto flex min-h-screen max-w-6xl flex-col border-x border-slate-800 bg-slate-900 px-2"
+    >
+      <header
+        class="mx-auto mt-2 rounded-3xl border border-slate-700 bg-slate-800 py-2"
+      >
+        <nav class="px-4" aria-label="Top">
+          <div class="flex items-center sm:gap-x-16">
+            <div class="flex items-center">
+              <a href="/" title="Home">
+                <img
+                  src="/du-logo.png"
+                  width="25"
+                  alt="Developer Dylan"
+                  class="hvr-primary max-w-[25px]"
+                />
+              </a>
+              <ul class="flex">
+                {
+                  navigation.map((link) => (
+                    <li class="ml-0.5 sm:ml-4">
+                      <a
+                        href={link.href}
+                        title={link.name || link.href}
+                        target={link.href.startsWith('h') ? '_blank' : '_self'}
+                        class="hvr-primary ml-2 flex cursor-pointer items-center font-medium text-gray-400 hover:text-gray-100 md:text-xl"
+                      >
+                        {link.icon ? (
+                          <Icon name={link.icon} class="mr-2" size={18} />
+                        ) : (
+                          ''
+                        )}
+                        <p>{link.name}</p>
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <div class="hidden sm:block">
+              <Connect iconSize={20} />
+            </div>
+            <div class="block pl-5 sm:hidden">
+              <button
+                open-menu
+                class="hvr-primary relative flex items-center shadow-fuchsia-500/70 drop-shadow-custom"
+              >
+                <Icon
+                  name="heroicons:arrow-trending-up-20-solid"
+                  class="mr-2 text-teal-500/80"
+                  size={25}
+                />
+
+                <span
+                  class="absolute right-0 top-0 h-2 w-2 animate-pingSlow rounded-full bg-sky-500 opacity-75"
+                ></span>
+              </button>
+            </div>
           </div>
-          <Connect />
+        </nav>
+      </header>
+
+      <div side-menu class="hidden">
+        <div class="absolute left-6 top-12">
+          <Connect
+            direction="col"
+            iconSize={30}
+            textSize="text-xl"
+          />
         </div>
-      </nav>
-    </header>
-    <main class="flex-1 px-4 max-w-4xl mx-auto w-full">
-      <slot />
-    </main>
-    <footer class="mx-auto py-5">
-      <Connect iconSize={20} showText={false} />
-      <p class="pt-6 text-center text-base text-gray-400">
-        &copy; 2023 Get Ullrich or Die Trying
-      </p>
-    </footer>
+        <button close-menu class="hidden">
+          <Icon name="heroicons:x-mark-20-solid" class="" size={25} />
+        </button>
+      </div>
+      <script>
+        // Find our component DOM on the page.
+        const openButton = document.querySelector('[open-menu]');
+        const closeButton = document.querySelector('[close-menu]');
+        let menu = document.querySelector('[side-menu]');
+
+        let menuIsOpen: boolean;
+        // Add event listeners to buttons
+        [openButton, closeButton].forEach((button) => {
+          button?.addEventListener('click', () => {
+            if (menuIsOpen && menu) {
+              menuIsOpen = false;
+              menu.className = 'hidden';
+            } else if (!menuIsOpen && menu && closeButton) {
+              menuIsOpen = true;
+              menu.className =
+                'z-50 absolute right-0 px-4 h-screen bg-slate-950 w-2/3 sm:w-1/2 border-slate-700 border-l border-y sm:hidden';
+              closeButton.className =
+                'block text-gray-200 absolute right-8 top-8 hover:ring-2 px-3 rounded-lg opacity-90 hover:ring-white';
+            }
+          });
+        });
+      </script>
+      <main class="mx-auto h-full w-full max-w-4xl flex-1 px-4">
+        <slot />
+      </main>
+      <footer class="mx-auto mt-10 py-5">
+        <Connect iconSize={20} showText={false} />
+        <p class="pt-6 text-center text-base text-gray-400">
+          &copy; 2023 Get Ullrich or Die Trying
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
