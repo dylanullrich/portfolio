@@ -1,8 +1,8 @@
 ---
 // Import base styles
-import '../styles/base.css';
+import '@/styles/base.css';
 import { Icon } from 'astro-icon/components';
-import Connect from '../components/Connect.astro';
+import Connect from '@/components/Connect.astro';
 
 export interface Props {
   title: string;
@@ -48,7 +48,6 @@ const navigation = [
 
   <body class="h-full w-full bg-slate-950 px-2">
     <div
-      close-menu-from-outside
       class="mx-auto flex min-h-screen max-w-6xl flex-col border-x border-slate-800 bg-slate-900 px-2"
     >
       <header
@@ -100,7 +99,6 @@ const navigation = [
                   class="mr-2 text-teal-500/80"
                   size={25}
                 />
-
                 <span
                   class="absolute right-0 top-0 h-2 w-2 animate-pingSlow rounded-full bg-sky-500 opacity-75"
                 ></span>
@@ -108,58 +106,50 @@ const navigation = [
             </div>
           </div>
         </nav>
+        <!-- Side Popup Menu -->
+        <div
+          side-menu
+          class="absolute bottom-0 right-0 top-0 z-50 hidden h-screen w-1/2 border-y border-l border-slate-700 bg-slate-950 px-4 sm:hidden"
+        >
+          <div class="absolute left-2 top-12 break-words">
+            <Connect direction="col" iconSize={30} textSize="text-xl" />
+          </div>
+          <button
+            close-menu-btn
+            class="absolute right-8 top-4 rounded-lg px-1 text-gray-200 opacity-90 hover:ring-2 hover:ring-white"
+          >
+            <Icon name="heroicons:x-mark-20-solid" class="" size={25} />
+          </button>
+        </div>
+        <script>
+          // Open menu button
+          // Grab DOM elements.
+          const menuEl = document.querySelector('[side-menu]') as HTMLElement;
+          const openButtonEl = document.querySelector(
+            '[open-menu-btn]'
+          ) as HTMLElement;
+          const closeButtonEl = document.querySelectorAll('[close-menu-btn]');
+
+          // Add open event listener.
+          openButtonEl?.addEventListener('click', () => {
+            menuEl.style.display = 'block';
+          });
+          // Add close event listener.
+          closeButtonEl.forEach((el) => {
+            el.addEventListener('click', () => {
+              if (menuEl.style.display === 'block') {
+                menuEl.style.display = 'none';
+              }
+            });
+          });
+        </script>
       </header>
 
-      <div
-        side-menu
-        class="hidden z-50 absolute right-0 px-4 h-screen bg-slate-950 w-1/2 border-slate-700 border-l border-y sm:hidden"
-      >
-        <div class="absolute left-2 top-12 break-words">
-          <Connect direction="col" iconSize={30} textSize="text-xl" />
-        </div>
-        <button
-          close-menu-btn
-          class="hidden text-gray-200 absolute right-8 top-4 hover:ring-2 px-1 rounded-lg opacity-90 hover:ring-white"
-        >
-          <Icon name="heroicons:x-mark-20-solid" class="" size={25} />
-        </button>
-      </div>
-      <script>
-        let menuIsOpen: boolean;
-        // Grab DOM elements.
-        const menu = document.querySelector('[side-menu]');
-        const openButton = document.querySelector('[open-menu-btn]');
-        const closeButton = document.querySelector('[close-menu-btn]');
-        const closeFromOutside = document.querySelector(
-          '[close-menu-from-outside]'
-        );
-
-        // Add event listeners to buttons
-        [openButton, closeButton].forEach((button) => {
-          button?.addEventListener('click', () => {
-            if (menuIsOpen && menu) {
-              menuIsOpen = false;
-              menu.style.display = 'none';
-              closeButton.style.display = 'none';
-            } else if (!menuIsOpen && menu && closeButton) {
-              menuIsOpen = true;
-              menu.style.display = 'block';
-              closeButton.style.display = 'block';
-            }
-          });
-        });
-
-          closeFromOutside?.addEventListener('click', () => {
-        if (menuIsOpen && menu) {
-            menuIsOpen = false;
-            menu.style.display = 'none';
-            closeButton.style.display = 'none';
-        }
-      </script>
-      <main class="mx-auto h-full w-full max-w-4xl flex-1 px-1">
+      <main close-menu-btn class="mx-auto h-full w-full max-w-4xl flex-1 px-1">
         <slot />
       </main>
-      <footer class="mx-auto mt-10 py-5">
+
+      <footer close-menu-btn class="mx-auto mt-10 py-5">
         <Connect iconSize={20} showText={false} />
         <p class="pt-6 text-center text-base text-gray-400">
           &copy; 2023 Get Ullrich or Die Trying
