@@ -123,33 +123,42 @@ const navigation = [
         </div>
         <script>
           // Open menu button
-          // Grab DOM elements.
+          // Grab DOM elements
           const menuEl = document.querySelector('[side-menu]') as HTMLElement;
           const openButtonEl = document.querySelector(
             '[open-menu-btn]'
           ) as HTMLElement;
-          const closeButtonEl = document.querySelectorAll('[close-menu-btn]');
+          const closeButtonEl = document.querySelector(
+            '[close-menu-btn]'
+          ) as HTMLElement;
 
-          // Add open event listener.
+          // Add open event listener to open button
           openButtonEl?.addEventListener('click', () => {
             menuEl.style.display = 'block';
           });
-          // Add close event listener.
-          closeButtonEl.forEach((el) => {
-            el.addEventListener('click', () => {
-              if (menuEl.style.display === 'block') {
-                menuEl.style.display = 'none';
-              }
-            });
+          // Add close event listener to close button
+          closeButtonEl.addEventListener('click', () => {
+            if (menuEl.style.display === 'block') {
+              menuEl.style.display = 'none';
+            }
+          });
+          // Hide the menu when a click event occurs outside the menu
+          document.addEventListener('click', (e) => {
+            if (
+              !menuEl.contains(e.target as Node) &&
+              !openButtonEl.contains(e.target as Node)
+            ) {
+              menuEl.style.display = 'none';
+            }
           });
         </script>
       </header>
 
-      <main close-menu-btn class="mx-auto h-full w-full max-w-4xl flex-1 px-1">
+      <main class="mx-auto h-full w-full max-w-4xl flex-1 px-1">
         <slot />
       </main>
 
-      <footer close-menu-btn class="mx-auto mt-10 py-5">
+      <footer class="mx-auto mt-10 py-5">
         <Connect iconSize={20} showText={false} />
         <p class="pt-6 text-center text-base text-gray-400">
           &copy; 2023 Get Ullrich or Die Trying
