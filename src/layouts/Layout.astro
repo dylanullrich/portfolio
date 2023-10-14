@@ -91,7 +91,7 @@ const navigation = [
             </div>
             <div class="block pl-5 sm:hidden">
               <button
-                open-menu
+                open-menu-btn
                 class="hvr-primary relative flex items-center shadow-fuchsia-500/70 drop-shadow-custom"
               >
                 <Icon
@@ -109,23 +109,25 @@ const navigation = [
         </nav>
       </header>
 
-      <div side-menu class="hidden">
+      <div
+        side-menu
+        class="hidden z-50 absolute right-0 px-4 h-screen bg-slate-950 w-2/3 sm:w-1/2 border-slate-700 border-l border-y sm:hidden"
+      >
         <div class="absolute left-6 top-12">
-          <Connect
-            direction="col"
-            iconSize={30}
-            textSize="text-xl"
-          />
+          <Connect direction="col" iconSize={30} textSize="text-xl" />
         </div>
-        <button close-menu class="hidden">
+        <button
+          close-menu-btn
+          class="hidden text-gray-200 absolute right-8 top-8 hover:ring-2 px-3 rounded-lg opacity-90 hover:ring-white"
+        >
           <Icon name="heroicons:x-mark-20-solid" class="" size={25} />
         </button>
       </div>
       <script>
-        // Find our component DOM on the page.
-        const openButton = document.querySelector('[open-menu]');
-        const closeButton = document.querySelector('[close-menu]');
-        let menu = document.querySelector('[side-menu]');
+        // Grab DOM elements.
+        const openButton = document.querySelector('[open-menu-btn]');
+        const closeButton = document.querySelector('[close-menu-btn]');
+        const menu = document.querySelector('[side-menu]');
 
         let menuIsOpen: boolean;
         // Add event listeners to buttons
@@ -133,13 +135,12 @@ const navigation = [
           button?.addEventListener('click', () => {
             if (menuIsOpen && menu) {
               menuIsOpen = false;
-              menu.className = 'hidden';
+              menu.style.display = 'none';
+              closeButton.style.display = 'none';
             } else if (!menuIsOpen && menu && closeButton) {
               menuIsOpen = true;
-              menu.className =
-                'z-50 absolute right-0 px-4 h-screen bg-slate-950 w-2/3 sm:w-1/2 border-slate-700 border-l border-y sm:hidden';
-              closeButton.className =
-                'block text-gray-200 absolute right-8 top-8 hover:ring-2 px-3 rounded-lg opacity-90 hover:ring-white';
+              menu.style.display = 'block';
+              closeButton.style.display = 'block';
             }
           });
         });
