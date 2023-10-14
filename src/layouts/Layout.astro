@@ -48,6 +48,7 @@ const navigation = [
 
   <body class="h-full w-full bg-slate-950 px-2">
     <div
+      close-menu-from-outside
       class="mx-auto flex min-h-screen max-w-6xl flex-col border-x border-slate-800 bg-slate-900 px-2"
     >
       <header
@@ -111,25 +112,28 @@ const navigation = [
 
       <div
         side-menu
-        class="hidden z-50 absolute right-0 px-4 h-screen bg-slate-950 w-2/3 sm:w-1/2 border-slate-700 border-l border-y sm:hidden"
+        class="hidden z-50 absolute right-0 px-4 h-screen bg-slate-950 w-1/2 border-slate-700 border-l border-y sm:hidden"
       >
-        <div class="absolute left-6 top-12">
+        <div class="absolute left-2 top-12 break-words">
           <Connect direction="col" iconSize={30} textSize="text-xl" />
         </div>
         <button
           close-menu-btn
-          class="hidden text-gray-200 absolute right-8 top-8 hover:ring-2 px-3 rounded-lg opacity-90 hover:ring-white"
+          class="hidden text-gray-200 absolute right-8 top-4 hover:ring-2 px-1 rounded-lg opacity-90 hover:ring-white"
         >
           <Icon name="heroicons:x-mark-20-solid" class="" size={25} />
         </button>
       </div>
       <script>
+        let menuIsOpen: boolean;
         // Grab DOM elements.
+        const menu = document.querySelector('[side-menu]');
         const openButton = document.querySelector('[open-menu-btn]');
         const closeButton = document.querySelector('[close-menu-btn]');
-        const menu = document.querySelector('[side-menu]');
+        const closeFromOutside = document.querySelector(
+          '[close-menu-from-outside]'
+        );
 
-        let menuIsOpen: boolean;
         // Add event listeners to buttons
         [openButton, closeButton].forEach((button) => {
           button?.addEventListener('click', () => {
@@ -144,8 +148,15 @@ const navigation = [
             }
           });
         });
+
+          closeFromOutside?.addEventListener('click', () => {
+        if (menuIsOpen && menu) {
+            menuIsOpen = false;
+            menu.style.display = 'none';
+            closeButton.style.display = 'none';
+        }
       </script>
-      <main class="mx-auto h-full w-full max-w-4xl flex-1 px-4">
+      <main class="mx-auto h-full w-full max-w-4xl flex-1 px-1">
         <slot />
       </main>
       <footer class="mx-auto mt-10 py-5">
