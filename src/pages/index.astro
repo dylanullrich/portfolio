@@ -68,73 +68,80 @@ const tech = [
   <div class="w-full">
     <section
       id="intro"
-      class="mx-auto flex -translate-y-60 flex-col pt-24 opacity-0 text-white"
+      class="mx-auto flex -translate-y-60 flex-col pt-24 text-white opacity-0"
     >
-      <h1
-        class="text-4xl font-extrabold text-white"
-      >
-        Dylan Ullrich · Software Developer
-      </h1>
-      <div class="mt-8">
-        <p class="text-lg">Hi 👋, I'm Dylan.</p>
-        <p class="pt-4 text-lg">I'm a Software Developer.</p>
-        <p class="pt-2 text-lg">
-          I enjoy start ups and opensource.
-        </p>
-        <p class="pt-2 text-lg">
-          I use <a
-            href="https://neovim.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><Icon
-              name="skill-icons:neovim-dark"
-              class="inline-block"
-              size={28}
-            /></a
-          > to edit code.
-        </p>
-        <p class="pt-2 text-lg">
-          I prefer to use the <a
-            href="https://en.wikipedia.org/wiki/Linux_kernel"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><Icon
-              name="skill-icons:linux-dark"
-              class="inline-block"
-              size={28}
-            /></a
-          > kernal.
-        </p>
-        <p class="pt-2 text-lg">
-          I use <a
-            href="https://wiki.archlinux.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><Icon name="logos:archlinux" class="inline-block" size={28} /></a
-          > , btw.
-        </p>
+      <div class="rounded-2xl p-4 shadow shadow-teal-400">
+        <h1 class="text-4xl font-extrabold text-white">
+          Dylan Ullrich · Software Developer
+        </h1>
+        <div class="mt-8">
+          <p class="text-lg">Hi 👋, I'm Dylan.</p>
+          <p class="pt-4 text-lg">I'm a Software Developer.</p>
+          <p class="pt-2 text-lg">I enjoy start ups and opensource.</p>
+          <p class="pt-2 text-lg">
+            I use <a
+              href="https://neovim.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><Icon
+                name="skill-icons:neovim-dark"
+                class="inline-block delay-200 ease-in hover:animate-bounce"
+                size={28}
+              /></a
+            > to edit code.
+          </p>
+          <p class="pt-2 text-lg">
+            I prefer to use the <a
+              href="https://en.wikipedia.org/wiki/Linux_kernel"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><Icon
+                name="skill-icons:linux-dark"
+                class="inline-block delay-200 ease-in hover:animate-bounce"
+                size={28}
+              /></a
+            > kernal.
+          </p>
+          <p class="pt-2 text-lg">
+            I use <a
+              href="https://wiki.archlinux.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><Icon
+                name="logos:archlinux"
+                class="inline-block delay-200 ease-in hover:animate-bounce"
+                size={28}
+              /></a
+            > , btw.
+          </p>
+        </div>
       </div>
     </section>
     <section
       id="tech"
       class="mx-auto flex max-w-xl translate-y-60 flex-col text-white opacity-0"
     >
-      <div class="mt-8">
+      <div class="rounded-2xl p-4 shadow shadow-fuchsia-300">
         <p class="text-lg font-bold">
           Here's some tools I've been using recently:
         </p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+        <ul class="flex flex-wrap pt-4">
           {
             tech.map((item) => (
-              <p class="truncate pr-6 pt-6 text-base font-semibold">
-                <a href={item.url} target="_blank" rel="noopener noreferrer">
-                  <Icon name={item.icon} class="mr-2 inline-block" size={28} />
-                  {item.name}{' '}
+              <li class="w-full max-w-[170px] py-3 text-base font-semibold delay-200 ease-in hover:animate-bounce">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex"
+                >
+                  <Icon name={item.icon} size={28} />
+                  <p class="ml-2 truncate">{item.name}</p>
                 </a>
-              </p>
+              </li>
             ))
           }
-        </div>
+        </ul>
       </div>
     </section>
   </div>
