@@ -3,10 +3,13 @@ import { Icon } from 'astro-icon/components';
 
 interface Props {
   iconSize?: number;
+  textSize?: 'text-sm' | 'text-lg' | 'text-xl';
   showText?: boolean;
+  direction?: 'row' | 'col';
 }
 
-const { iconSize, showText } = Astro.props as Props;
+const { iconSize, textSize, showText, textSide, direction } =
+  Astro.props as Props;
 
 const links = [
   {
@@ -38,27 +41,39 @@ if (showText === false) {
 }
 ---
 
-<div class="flex items-center justify-center space-x-5">
-  {
-    links.map((link) => (
-      <a
-        href={link.href}
-        title={link.name || link.href}
-        target={link.href.startsWith('h') ? '_blank' : '_self'}
-        rel="noopener noreferrer"
-        class="hvr-primary flex cursor-pointer items-center text-lg font-medium text-gray-400 hover:text-gray-100"
-      >
-        <p class="text-xl">{link.name}</p>
-        {link.icon ? (
-          <Icon
-            name={link.icon}
-            class={link.name ? 'ml-2' : ''}
-            size={iconSize ? iconSize : 25}
-          />
-        ) : (
-          ''
-        )}
-      </a>
-    ))
-  }
+<div>
+  <ul
+    class={direction === 'col'
+      ? 'flex flex-col items-start justify-center '
+      : 'flex items-center justify-center'}
+  >
+    {
+      links.map((link) => (
+        <li class={direction === 'col' ? 'my-0.5 ml-2 py-1' : 'ml-2'}>
+          <a
+            href={link.href}
+            title={link.name || link.href}
+            target={link.href.startsWith('h') ? '_blank' : '_self'}
+            rel="noopener noreferrer"
+            class={
+              direction === 'col'
+                ? 'hvr-primary flex cursor-pointer flex-row-reverse items-center text-lg font-medium text-gray-400 hover:text-gray-100'
+                : 'hvr-primary flex cursor-pointer items-center text-lg font-medium text-gray-400 hover:text-gray-100'
+            }
+          >
+            <p class={textSize ? textSize : 'text-base'}>{link.name}</p>
+            {link.icon ? (
+              <Icon
+                name={link.icon}
+                class={link.name && direction === 'col' ? 'ml-2 mr-2' : 'ml-2'}
+                size={iconSize ? iconSize : 25}
+              />
+            ) : (
+              ''
+            )}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </div>
