@@ -9,11 +9,17 @@
           lg: '0 8px 16px var(--tw-shadow-color)',
         },
         dropShadow: {
-          custom: '0 5px 5px var(--tw-shadow-color)'
+          custom: '0 2px 4px var(--tw-shadow-color)'
         },
         animation: {
           fadeOut: 'fadeOut 2s ease-in-out',
           fadeIn: 'fadeIn 2s ease-in-out',
+          pingSlow:'pingSlow 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+
+        },
+        scale: {
+          '175': '1.75',
+          '200': '2',
         },
         keyframes: theme => ({
           fadeOut: {
@@ -24,10 +30,15 @@
             '100%': { opacity: theme('opactity.100') },
             '0%': { opacity: theme('opacity.0') },
           },
+          pingSlow: {
+            '75%': { scale: theme('scale.150') },
+            '100%': { opacity: theme('opacity.0') },
+          },
         }),
       },
     },
     plugins: [require('@tailwindcss/typography'),
+      require('@tailwindcss/container-queries'),
       (function ({ matchUtilities, theme }) {
         matchUtilities(
           {
